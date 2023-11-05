@@ -3,34 +3,14 @@
   --main: #000;
   --secondary: #616161;
 }
-@font-face {
-  font-family: 'Satoshi-Regular';
-  src: url('../fonts/Satoshi-Regular.woff') format('woff');
-       font-weight: 400;
-       font-display: swap;
-       font-style: normal;
-}
-@font-face {
-  font-family: 'Satoshi-Medium';
-  src: url('../fonts/Satoshi-Medium.woff') format('woff');
-       font-weight: 500;
-       font-display: swap;
-       font-style: normal;
-}
-@font-face {
-  font-family: 'Satoshi-Bold';
-  src: url('../fonts/Satoshi-Bold.woff') format('woff');
-       font-weight: 700;
-       font-display: swap;
-       font-style: normal;
-}
 html{
 	-ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 body{
-  font-family: 'Satoshi-Regular', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   text-rendering: geometricPrecision;
+  font-weight: 500;
   margin: 0;
   letter-spacing: 0;
   font-size: 24px;
@@ -41,62 +21,64 @@ body{
 span{
   color: var(--secondary);
 }
-h1{
-  font-family: 'Satoshi-Bold';
+
+/* Typography */
+
+.text-100{
   color: var(--main);
   font-size: 5em;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: -4px;
   margin-bottom: 120px;
   margin-left: -4px;
   margin-top: 20px;
 }
-h1 a{
+.text-100 a{
   color:black;
   text-decoration: none;
   border-bottom: 4px solid #000;
   box-shadow: inset 0 0px 0 #000;
   transition-duration: 150ms;
 }
-h1 a:hover{
+.text-100 a:hover{
   color:#fff;
 	background-size: 400% 400%;
   box-shadow: inset 0 100px 0 #000;
 	animation: gradient 4s ease infinite;
 	height: 100vh;
 }
-h3{
-  font-family: 'Satoshi-Medium';
+.text-300{
   color: var(--main);
+  font-weight: 700;
   font-size: 2em;
   line-height: 1.1;
 }
-h5{
-  font-family: 'Satoshi-Regular';
+.text-500{
+  font-weight: 500;
   color: var(--main);
-  font-size: 1.2em;
+  font-size: 1.1em;
+  letter-spacing: -1.2px;
 }
-.h6 {
+.text-600 {
   font-weight: 500;
   font-size: 2em;
   letter-spacing: -1px;
   line-height: 1.1;
 }
-h7{
-  font-family: 'Satoshi-Medium';
+.text-700{
   font-size: 1em;
   color: var(--main);
 }
-
-.h8 {
-  font-size: 0.8em;
+.text-800 {
+  font-size: 0.7em;
   line-height: 2;
 }
 .subline{
-  font-family: 'Satoshi-Medium';
   color: var(--main);
   font-size: 0.8em;
 }
+
 .header{
   width: 100%;
   height:1600px;
@@ -162,7 +144,13 @@ form button{
   transition: 0.1s;
   border-bottom-width: 3px;
 }
-.sub-head{font-size: 0.7em;font-weight: 500;letter-spacing: 3px;margin-bottom: 70px;}
+.sub-head{
+  font-size: 0.6em;
+  font-weight: 700;
+  letter-spacing: 2.8px;
+  margin-bottom: 70px;
+  color: var(--main);
+}
 
 .projects-item,.cta{
   width: fit-content;
@@ -242,7 +230,7 @@ form button{
   color: #000;
 }
 
-.h7 a{font-weight: 600;}
+.text-700 a{font-weight: 600;}
 .trasl:hover {transform: translatex(10px);transition: all .2s;}
 
 .mt0{margin-top: 0px!important;}
@@ -307,8 +295,6 @@ form button{
   width:400px;
   text-align: center;
   margin: auto;
-  font-size: 0.8em;
-  color: var(--secondary);
 }
 .form-container .avatar{
   background-image: url(../images/profile.png);
@@ -412,7 +398,7 @@ html {
 a {
   cursor: pointer;
 }
-.h8{font-size: 1em;}
+.text-800{font-size: 1em;}
 
 .role{display: block;}
 .role-title{
