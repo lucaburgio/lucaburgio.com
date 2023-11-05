@@ -1,8 +1,0 @@
-
-
-CTA
-
-<cta><url>#</url><txt>click now!</txt></cta>
-
-
-
