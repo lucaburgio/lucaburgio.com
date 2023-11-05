@@ -1,0 +1,5 @@
+Options -Multiviews
+
+RewriteEngine On
+
+RewriteRule ^([A-Za-z0-9-]+)/?$ article.php?p=$1 [NC,L]
