@@ -10,10 +10,27 @@
 		<link rel="shortcut icon" href="images/favicon.png"> 
 		<link rel="stylesheet" type="text/css" href="css/default.css?v=5.0" />
 		<script src='js/jquery202.min.js'></script>
+		<script type="module">
+			import confetti from 'https://unpkg.com/canvas-confetti@1.3.2?module';
+		  
+			document.querySelectorAll('.confetti').forEach(function(element) {
+  				element.addEventListener('mouseover', function(event) {
+					var rect = event.target.getBoundingClientRect();
+					var x = (rect.left + rect.right) / 2 / window.innerWidth;
+					var y = (rect.top + rect.bottom) / 2 / window.innerHeight;
+
+					confetti({
+						particleCount: 100,
+						spread: 70,
+						origin: { x: x, y: y }
+					});
+				});
+			});
+		</script>
 		<script src="js/modernizr.custom.js"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 		
 		<link rel="canonical" href="https://lucaburgio.com">
 		<meta property="og:url" content="https://lucaburgio.com">
@@ -72,7 +89,7 @@
 							<div class="divider"></div>
 							<div class='subline mt20' style='font-size:17px'>2018 - Now</div>
 						</div>	
-						<div class='role-descr text-800'>Bending Spoons is an elite team who creates their own tech products, used and loved by millions all around the world. Currently focused on mobile apps, and they’re constantly evaluating opportunities in other exciting fields.</div>
+						<div class='role-descr text-500'>Bending Spoons is an elite team who creates their own tech products, used and loved by millions all around the world. Currently focused on mobile apps, and they’re constantly evaluating opportunities in other exciting fields.</div>
 					</div>
 					<div class='role mb140'>
 						<div class='role-title'>
@@ -82,53 +99,92 @@
 							<div class="divider"></div>
 							<div class='subline mt20' style='font-size:17px'>2013 - 2018</div>
 						</div>
-						<div class='role-descr text-800'>Musixmatch is the world’s largest lyrics platform - where you can search, enjoy, and share lyrics from any track, anywhere in the world.</div>
+						<div class='role-descr text-500'>Musixmatch is the world’s largest lyrics platform - where you can search, enjoy, and share lyrics from any track, anywhere in the world.</div>
 					</div>
 			</div>
-		<div class='hl1-section mt0' style='margin-bottom:0px;'>
-			<div class='main-con flex'>
-				<div class='sub-head  w100'>AWARDS AND ACHIEVEMENTS</div>
-			</div>
-			<div class='main-con flex'>
-				<div class='half3'>
-					
-					<div class="award particular"></div>
-					<div class='text-800  mt50'>Particular was featured by Apple in Europe the first week of the release, in 2016. The game, available for iOS and Android reached <b class=''>756.000 downloads.</b></div>
-					<div class='text-800  mt50 mb50'>The game was born as a personal exploration of the world behind Unity Engine. Particular took 6 months of work, crafted in my spare time.</div>
 
-					<a href="https://lucaburgio.com/insight/the-making-of-particular" class='cta'>
-						<div class='text-700 w5 trasl'>Read the story
+
+
+		<div class='hl1-section' style='margin-bottom:0px;'>
+			<div class='main-con flex'>
+				<div class='half5'>
+					<div class='sub-head'>PROJECT</div>
+					<div class="divider"></div>
+					<div class='text-200'>Iconoir</div>
+					<div class="text-500 highlight mb40">
+						The open-source library with 1500+ icons.
+			        </div>
+					<div class="text-500">
+						Iconoir is one of the biggest open source SVG Icons libraries. No premium icons, no email sign-up, no newsletters.
+						Iconoir is available on Figma, React and React Libraries, CSS and happily integrated in Framer.
+					</div>
+					<a href="https://iconoir.com" class='cta mt50'>
+						<div class='text-700'>Take a look
 
 							<svg style="margin-left: 10px;" width="27" height="10" viewBox="0 0 27 10" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M21.941 0.155L21.319 0.717C21.188 0.837 21.122 0.999 21.122 1.163C21.122 1.306 21.174 1.45 21.278 1.566C21.287 1.576 21.296 1.584 21.306 1.594L23.416 3.63H0.601C0.269 3.63 0 3.896 0 4.229V5.03C0 5.362 0.269 5.63 0.601 5.63H23.429L21.328 7.657C21.089 7.886 21.081 8.266 21.312 8.505C21.318 8.511 21.324 8.516 21.329 8.521L21.936 9.099C22.168 9.321 22.534 9.321 22.765 9.097L26.66 5.343C27.064 4.952 27.064 4.318 26.66 3.928L22.759 0.168C22.644 0.0560002 22.495 0 22.345 0C22.2 0 22.056 0.0510002 21.941 0.155Z"/>
 							</svg>
 						</div>
 					</a>
-				</div>
-				<div class='half4 txtright'>
-					<div class='fit'>
-						<div class="award mxm1"></div>
-						<div class="award mxm2"></div>
-						<div class="award mxm3"></div>
-						<div class="award mxm4"></div>
-					</div>
-					<div class='text-800  mt10 s1hs'>As Product Designer and Android Lead Designer at Musixmatch, I was involved in the entire product process of the company. We reached important goals during the years with a neat design and new features.</div>
-					<div class='text-800  mt50 s1hs'>The product was largely spread out to Android, iOS, TV, Watch and web.</div>
-				</div>
+			    </div>
+				<div class='half6 data'>
+					<div class='sub-head'>DATA</div>
+					<div class="divider"></div>
+					<div class='text-500'>Started / Released as OSS</div>
+					<div class='text-500 value'>2018 / 2021</div>
+					<div class='text-500'>Downloads / Year</div>
+					<div class='text-500 value'>Half a Million</div>
+					<div class='text-500'>Achievements</div>
+					<div class='text-500 value confetti'>Appeared on HBO Westworld S4</div>
 				</div>
 			</div>
 		</div>
 
+
+
+
+
+
+
 		<div class='hl1-section' style='margin-bottom:0px;'>
 			<div class='main-con flex'>
 				<div class='half5'>
+					<div class='sub-head'>PROJECT</div>
 					<div class="divider"></div>
-				</div>
-				<div class='half6'>
+					<div class='text-200'>Particular</div>
+					<div class="text-500 highlight mb40">
+						A mobile game for iOS and Android.
+			        </div>
+					<img src="images/awards/particular.svg" class="mb20 mt20" alt="Particular">
+					<div class="text-500">
+						Particular was featured by Apple in Europe the first week of the release, in 2016. The game, available for iOS and Android reached 756.000 downloads.<br><br>
+						The game was born as a personal exploration of the world behind Unity Engine. Particular took 6 months of work, crafted in my spare time.
+					</div>
+					<a href="https://iconoir.com" class='cta mt50'>
+						<div class='text-700'>Take a look
+
+							<svg style="margin-left: 10px;" width="27" height="10" viewBox="0 0 27 10" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M21.941 0.155L21.319 0.717C21.188 0.837 21.122 0.999 21.122 1.163C21.122 1.306 21.174 1.45 21.278 1.566C21.287 1.576 21.296 1.584 21.306 1.594L23.416 3.63H0.601C0.269 3.63 0 3.896 0 4.229V5.03C0 5.362 0.269 5.63 0.601 5.63H23.429L21.328 7.657C21.089 7.886 21.081 8.266 21.312 8.505C21.318 8.511 21.324 8.516 21.329 8.521L21.936 9.099C22.168 9.321 22.534 9.321 22.765 9.097L26.66 5.343C27.064 4.952 27.064 4.318 26.66 3.928L22.759 0.168C22.644 0.0560002 22.495 0 22.345 0C22.2 0 22.056 0.0510002 21.941 0.155Z"/>
+							</svg>
+						</div>
+					</a>
+			    </div>
+				<div class='half6 data'>
+					<div class='sub-head'>DATA</div>
 					<div class="divider"></div>
+					<div class='text-500'>Published</div>
+					<div class='text-500 value'>2016</div>
+					<div class='text-500'>Downloads</div>
+					<div class='text-500 value'>760K</div>
+					<div class='text-500'>Achievements</div>
+					<div class='text-500 value confetti'>“Games we love” Europe - Apple 2016</div>
 				</div>
 			</div>
 		</div>
+
+
+
+
 		<div class='hl1-section' style='margin-bottom:0px;'>
 			<div class='main-con flex'>
 				<div class='half5'>
@@ -136,17 +192,17 @@
 
 					<div style='border-bottom: 1px solid #D9D9D9;' class='mb50'>
 						<div class='text-300' style='max-width: 280px;'>Politecnico di Milano</div>
-						<div class='text-800  mt30 mb50'>Presenting 'Process of designing Products'. The complete process behind the build of a product, in that case, an app. The entire flow, starting from the User Experience and the wireframing, The Design, The Prototyping, The Finalization and the last step, the Development.</div>
+						<div class='text-500  mt30 mb50'>Presenting 'Process of designing Products'. The complete process behind the build of a product, in that case, an app. The entire flow, starting from the User Experience and the wireframing, The Design, The Prototyping, The Finalization and the last step, the Development.</div>
 					</div>
 
 					<div style='border-bottom: 1px solid #D9D9D9;' class='mb50'>
 						<div class='text-300' style='max-width: 280px;'>Dribbble Event Milan 2019</div>
-						<div class='text-800  mt30 mb50'>The Dribbble event at Bending Spoons HQ, in Milan. Presenting Figma, Prototyping tools and the process of designing products.</div>
+						<div class='text-500  mt30 mb50'>The Dribbble event at Bending Spoons HQ, in Milan. Presenting Figma, Prototyping tools and the process of designing products.</div>
 					</div>
 
 					<div style='border-bottom: 1px solid #D9D9D9;' class='mb50'>
 						<div class='text-300' style='max-width: 280px;'>Polimi Interaction Design Class</div>
-						<div class='text-800  mt30 mb50'>Presenting the use of prototypes to improve the Design Process and to avoid common UX mistakes, and common rules to consider during the study of an efficient User Experience.</div>
+						<div class='text-500  mt30 mb50'>Presenting the use of prototypes to improve the Design Process and to avoid common UX mistakes, and common rules to consider during the study of an efficient User Experience.</div>
 					</div>
 
 				</div>
@@ -154,10 +210,10 @@
 					<div class='sub-head '>ARTICLES</div>
 
 					<div class='text-300'>The Making Of Particular</div>
-					<div class='text-800  mt30 mb50'>Most of you probably don't know about Particular and its story because I had never decided to publish it – until now – four years later. [...]</div>
+					<div class='text-500  mt30 mb50'>Most of you probably don't know about Particular and its story because I had never decided to publish it – until now – four years later. [...]</div>
 
 					<a href="https://lucaburgio.com/insight/the-making-of-particular" class='cta mb100'>
-						<div class='text-700 w5 trasl'>Read
+						<div class='text-700 '>Read
 							<svg style="margin-left: 10px;" width="27" height="10" viewBox="0 0 27 10" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M21.941 0.155L21.319 0.717C21.188 0.837 21.122 0.999 21.122 1.163C21.122 1.306 21.174 1.45 21.278 1.566C21.287 1.576 21.296 1.584 21.306 1.594L23.416 3.63H0.601C0.269 3.63 0 3.896 0 4.229V5.03C0 5.362 0.269 5.63 0.601 5.63H23.429L21.328 7.657C21.089 7.886 21.081 8.266 21.312 8.505C21.318 8.511 21.324 8.516 21.329 8.521L21.936 9.099C22.168 9.321 22.534 9.321 22.765 9.097L26.66 5.343C27.064 4.952 27.064 4.318 26.66 3.928L22.759 0.168C22.644 0.0560002 22.495 0 22.345 0C22.2 0 22.056 0.0510002 21.941 0.155Z"/>
 							</svg>
@@ -165,10 +221,10 @@
 					</a>
 
 					<div class='text-300'>How we boosted our design process</div>
-					<div class='text-800  mt30 mb50'>In 2018, Bending Spoons switched from Sketch to Figma. We evaluated the benefits and the reasons behind the change. Now Figma allows us to work in a faster and simpler way with developers and also teams not directly involved in the specific design process [...]</div>
+					<div class='text-500  mt30 mb50'>In 2018, Bending Spoons switched from Sketch to Figma. We evaluated the benefits and the reasons behind the change. Now Figma allows us to work in a faster and simpler way with developers and also teams not directly involved in the specific design process [...]</div>
 
 					<a href="https://lucaburgio.com/insight/how-we-boosted-our-design-process" class='cta'>
-						<div class='text-700 w5 trasl'>Read
+						<div class='text-700 '>Read
 							<svg style="margin-left: 10px;" width="27" height="10" viewBox="0 0 27 10" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M21.941 0.155L21.319 0.717C21.188 0.837 21.122 0.999 21.122 1.163C21.122 1.306 21.174 1.45 21.278 1.566C21.287 1.576 21.296 1.584 21.306 1.594L23.416 3.63H0.601C0.269 3.63 0 3.896 0 4.229V5.03C0 5.362 0.269 5.63 0.601 5.63H23.429L21.328 7.657C21.089 7.886 21.081 8.266 21.312 8.505C21.318 8.511 21.324 8.516 21.329 8.521L21.936 9.099C22.168 9.321 22.534 9.321 22.765 9.097L26.66 5.343C27.064 4.952 27.064 4.318 26.66 3.928L22.759 0.168C22.644 0.0560002 22.495 0 22.345 0C22.2 0 22.056 0.0510002 21.941 0.155Z"/>
 							</svg>
