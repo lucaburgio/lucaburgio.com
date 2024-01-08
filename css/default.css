@@ -72,7 +72,7 @@ a{
 }
 .text-500{
   font-weight: 400;
-  font-size: 0.9em;
+  font-size: 0.84em;
   letter-spacing: -0.4px;
 }
 .text-600 {
@@ -194,7 +194,7 @@ form button{
   color: var(--main);
   padding: 14px 24px;
   border-radius: 14px;
-  font-size: 0.9em;
+  font-size: 0.8em;
   background-color: var(--light);
   transition: all .2s;
   width: fit-content;
@@ -319,12 +319,19 @@ form button{
   margin: 120px 0 0 0;
 }
 
+.awards {
+  height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
 
 .award {
   display: block;
   text-indent: -9999px;
   width: 176px;
   height: 85px;
+  margin-bottom: 30px;
   background-size: 100%!important;
   background-repeat:no-repeat;
 }
@@ -344,12 +351,9 @@ form button{
   background: url(../images/awards/mxm4.svg);
 }
 .award.mxm1,.award.mxm2,.award.mxm3,.award.mxm4{
-  margin-left: 26px;
-  margin-bottom: 30px;
   display: inline-block;
   background-repeat: no-repeat;
 }
-.fit {height: fit-content;}
 
 .txtright{text-align: right;}
 
