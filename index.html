@@ -66,7 +66,12 @@
 </head>
 
 <body>
-	<button id="theme-switcher" style="position:fixed;z-index: 99;">Switch Theme</button>
+	<button id="theme-switcher" style="position:fixed;z-index: 99;">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" stroke="var(--main)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+		<path d="M22 12C22 17.5228 17.5228 22 12 22V2C17.5228 2 22 6.47715 22 12Z" fill="var(--main)"/>
+		</svg>
+		</button>
 	<div class="printer-sx"></div>
 	<div class="printer-dx"></div>
 	<div class="title-guideline"></div>
@@ -139,7 +144,7 @@
 					<div class='main-con'>
 						<div class='sub-head'>AWARDS AND ACHIEVEMENTS</div>
 						<div class="main-con flex">
-							<div class="half3">
+							<div class="half20">
 								<div class="awards">
 									<div class="award particular"></div>
 								</div>
@@ -159,7 +164,7 @@
 									</div>
 								</a>
 							</div>
-							<div class="half4 txtright">
+							<div class="half64 txtright">
 								<div class="awards">
 									<div class="award mxm1"></div>
 									<div class="award mxm2"></div>
@@ -184,7 +189,7 @@
 
 				<div class='hl1-section' style='margin-bottom:0px;'>
 					<div class='main-con flex'>
-						<div class='half5'>
+						<div class='half50'>
 							<div class='sub-head'>PROJECT</div>
 							<div class='text-200'>Iconoir</div>
 							<div class="text-500 highlight mb40">
@@ -204,7 +209,7 @@
 								</div>
 							</a>
 						</div>
-						<div class='half6 data'>
+						<div class='half30 data'>
 							<div class='sub-head'>DATA</div>
 							<div class='text-500'>Started / Released as OSS</div>
 							<div class='text-500 value'>2018 / 2021</div>
@@ -232,7 +237,7 @@
 
 				<div class='hl1-section' style='margin-bottom:0px;'>
 					<div class='main-con flex'>
-						<div class='half5'>
+						<div class='half50'>
 							<div class='sub-head'>PROJECT</div>
 							<div class='text-200'>Particular</div>
 							<div class="text-500 highlight mb40">
@@ -255,7 +260,7 @@
 								</div>
 							</a>
 						</div>
-						<div class='half6 data'>
+						<div class='half30 data'>
 							<div class='sub-head'>DATA</div>
 							<div class='text-500'>Published</div>
 							<div class='text-500 value'>2016</div>
@@ -278,7 +283,7 @@
 
 				<div class='hl1-section' style='margin-bottom:0px;'>
 					<div class='main-con flex'>
-						<div class='half5'>
+						<div class='half30'>
 							<div class='sub-head'>TALKS</div>
 
 							<div style='border-bottom: 1px solid #D9D9D9;' class='mb50'>
@@ -308,7 +313,7 @@
 							</div>
 
 						</div>
-						<div class='half6'>
+						<div class='half50'>
 							<div class='sub-head'>ARTICLES</div>
 
 							<div class='text-400'>The Making Of Particular</div>
@@ -319,11 +324,10 @@
 							<a href="https://lucaburgio.com/insight/the-making-of-particular">
 								<div class='cta'>
 									Read
-									<img src="images/cta-arrow.svg">
 								</div>
 							</a>
-
-							<div class='text-400'>How we boosted our design process</div>
+							
+							<div class='text-400 mt50'>How we boosted our design process</div>
 							<div class='text-500  mt30 mb50'>In 2018, Bending Spoons switched from Sketch to Figma. We
 								evaluated
 								the benefits and the reasons behind the change. Now Figma allows us to work in a faster
@@ -332,15 +336,21 @@
 								process
 								[...]</div>
 
-							<a href="https://lucaburgio.com/insight/how-we-boosted-our-design-process" class='cta'>
-								<div class='text-700 '>Read
-									<svg style="margin-left: 10px;" width="27" height="12" viewBox="0 0 27 10"
-										xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd"
-											d="M21.941 0.155L21.319 0.717C21.188 0.837 21.122 0.999 21.122 1.163C21.122 1.306 21.174 1.45 21.278 1.566C21.287 1.576 21.296 1.584 21.306 1.594L23.416 3.63H0.601C0.269 3.63 0 3.896 0 4.229V5.03C0 5.362 0.269 5.63 0.601 5.63H23.429L21.328 7.657C21.089 7.886 21.081 8.266 21.312 8.505C21.318 8.511 21.324 8.516 21.329 8.521L21.936 9.099C22.168 9.321 22.534 9.321 22.765 9.097L26.66 5.343C27.064 4.952 27.064 4.318 26.66 3.928L22.759 0.168C22.644 0.0560002 22.495 0 22.345 0C22.2 0 22.056 0.0510002 21.941 0.155Z" />
-									</svg>
-								</div>
-							</a>
+								<a href="insight/how-we-boosted-our-design-process.html" class="a-cta">
+									<div class='cta mt50'>
+										Read the story
+									</div>
+								</a>
+							
+								<div class='text-400 mt50'>Designing at scale: Where creativity meets organized chaos</div>
+							<div class='text-500  mt30 mb50'>Here’s a question: How can a (growing) group of individually talented designers, each with their own unique strengths and style sensibilities, consistently strive to deliver exceptional on-brand design work for an expanding range of diverse products?
+								[...]</div>
+
+								<a href="https://www.linkedin.com/pulse/designing-scale-where-creativity-meets-organized-chaos-luca-burgio%3FtrackingId=jYDdN7XfTpqu12iBRCBAtA%253D%253D/?trackingId=jYDdN7XfTpqu12iBRCBAtA%3D%3D" class="a-cta">
+									<div class='cta mt50'>
+										Read the story
+									</div>
+								</a>
 						</div>
 					</div>
 				</div>
