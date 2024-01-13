@@ -127,6 +127,21 @@ a{
   display: block;
 }
 
+.shots{
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.shots img{
+  width: 32%;
+  height: fit-content;
+  border-radius: 8px;
+  transition-duration: 250ms;
+
+}
+
 /* Typography */
 
 .text-100{
@@ -222,12 +237,6 @@ a{
   font-weight: 500;
 }
 
-.header{
-  width: 100%;
-  height:1600px;
-  position: absolute;
-}
-
 .half20{width: 20%;}
 .half30{width: 30%;}
 .half50{width: 50%;}
@@ -261,7 +270,7 @@ a{
 .divider{
   height: 1px;
   width: 100%;
-  background-color: #D9D9D9;
+  background-color: var(--guidelines);
   margin: 30px 0 60px 0;
 }
 form button{
@@ -277,17 +286,7 @@ form button{
 .contacts.button:hover{
   background-color: var(--light-hover);
 }
-.fs1{font-size: 0.85em;}
-	.a-special{text-decoration: none;text-decoration: none;padding-bottom: 2px;border-bottom-style: solid;
-    border-bottom-width: 2px;border-bottom-color: #D9D9D9;}
 
-.a-special:hover{
-  color: black;
-  border-bottom-color: black;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-  border-bottom-width: 3px;
-}
 .sub-head{
   font-size: 0.6em;
   font-weight: 700;
@@ -312,7 +311,7 @@ form button{
   transition: all .2s;
   width: fit-content;
 }
-.cta img{
+.cta svg{
   margin-left: 10px;
 }
 .cta:hover{
@@ -408,19 +407,11 @@ form button{
 
 .text-700 a{font-weight: 600;}
 
-.mt0{margin-top: 0px!important;}
-.mt10{margin-top: 10px;}
 .mt20{margin-top: 20px;}
 .mt30{margin-top: 30px;}
 .mt50{margin-top: 50px;}
-.mt120{margin-top: 120px;}
 
-.w100{width: 100%;}
-.s1hs{width: 70%;margin-left: 30%;}
-.mr20{margin-right: 20px;}
-.mb20{margin-bottom: 20px;}.mb30{margin-bottom: 30px;}.mb40{margin-bottom: 40px;}.mb50{margin-bottom: 50px;}.mb55{margin-bottom: 55px;}.mb60{margin-bottom: 60px;}.mb80{margin-bottom: 80px;}.mb90{margin-bottom: 90px;}	
-.mb90{margin-bottom: 90px;}
-.mb100{margin-bottom: 100px;}
+.mb20{margin-bottom: 20px;}.mb40{margin-bottom: 40px;}.mb50{margin-bottom: 50px;}
 .mb110{margin-bottom: 110px;}
 .mb140{margin-bottom: 140px;}
 
@@ -513,7 +504,6 @@ form button{
 .half64 {margin-top: 70px;}
 .main-con.flex{display:inherit;justify-content:inherit;}
 .award.mxm1,.award.mxm2,.award.mxm3,.award.mxm4{margin-left: 0;margin-right: 26px;}
-.s1hs{width: 100%;margin-left: 0;}
 
 .half30{width: 100%!important;}
 }
@@ -542,7 +532,6 @@ body{font-size: 16px;margin-left: auto;margin-right: auto;}
 .half64 {margin-top: 70px;}
 .main-con.flex{display:inherit;justify-content:inherit;}
 .award.mxm1,.award.mxm2,.award.mxm3,.award.mxm4{margin-left: 0;margin-right:10px;width: 46%;}
-.s1hs{width: 100%;margin-left: 0;}
 .award{width: 158px;height: 74px;}
 .cta .text-700 {
   font-size: 1.4em;
