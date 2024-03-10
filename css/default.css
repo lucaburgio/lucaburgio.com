@@ -42,6 +42,7 @@
   --light: #d4d4d4;
   --guidelines: #CFCFCF;
 
+  --xxs: 16px;
   --xs: 18px;
   --sm: 20px;
   --md: 24px;
@@ -225,6 +226,11 @@ a.list-item:hover{
   font-size: var(--md);
   color: var(--secondary);
   letter-spacing: -1px;
+}
+.text-504{
+  font-weight: var(--regular);
+  font-size: var(--xxs);
+  color: var(--secondary);
 }
 .text-600 {
   font-weight: 500;
