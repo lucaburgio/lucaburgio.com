@@ -268,7 +268,7 @@ a.list-item:hover{
   display: flex;
 }
 .role .role-title{
-  width: 75%;
+  width: 45%;
   max-width: 360px;
   margin-right: 20%;
 }
@@ -445,15 +445,15 @@ form button{
 
 .awards {
   height: fit-content;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 60px;
 }
-
 .award {
   display: block;
   text-indent: -9999px;
-  width: 176px;
+  width: 154px;
   height: 85px;
   margin-bottom: 30px;
   background-size: 100%!important;
