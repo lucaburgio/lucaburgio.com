@@ -76,6 +76,7 @@ body{
   line-height: 1.5;
   color: var(--main);
   background-color: var(--bg);
+  transition: background-color 1s;
 }
 #theme-switcher{
   background-color: transparent;
@@ -323,17 +324,21 @@ form button{
   padding: 14px 24px;
   border-radius: 14px;
   font-size: 0.8em;
-  background-color: var(--light);
+  background-color: rgba(0,0,0,0.1);
   transition: all .2s;
   width: fit-content;
 }
 .cta svg{
   margin-left: 10px;
 }
+.cta:hover svg{
+  fill: white;
+}
 .cta:hover{
-  background-color: var(--light-hover);
+  background-color: rgba(0,0,0,1);
   transform: scale(1.1);
   transition: all .2s;
+  color: white;
 }
 .cta img{
   transition: all .2s;

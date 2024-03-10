@@ -87,7 +87,7 @@
 				</script>
 				<div class='avatar tooltip' onclick='Speak()'><span class="tooltiptext" id="saying">Hey! Click
 						me.</span></div>
-				<div class='text-700 mt50'>Hey, I’m Luca.</div>
+				<div class='text-700 mt50'>Hey, I’m Luca.</div><div id="id1"></div>
 				<div class='text-100'>
 					<span>Currently</span> Head of Design at Bending Spoons. <span>Previously</span> Android Lead Designer at Musixmatch.<br>
 				</div>
@@ -127,7 +127,11 @@
 								<div class="award mxm3"></div>
 								<div class="award mxm4"></div>
 							</div>
+							The Musixmatch app got a Google i/O 2016 Award Nominee and the awards Best App Apple Store 2013,
+							and Best App Google Play 2014, 2015, 2018.
+							
 						</div>
+						<div id="id2"></div>
 					</div>
 				</div>
 
@@ -141,6 +145,7 @@
 						<div class='half64'>
 							<div class='sub-head'>Project</div>
 							<div class='text-200'>Iconoir</div>
+							
 							<div class="text-500 mb40">
 								The open-source library with 1500+ icons.
 							</div>
@@ -171,6 +176,7 @@
 							<div class='text-500 mt60'>Achievements</div>
 							<div class='text-501 confetti'>Used in HBO series Westworld S4.<br>Integrated in
 								Framer editor.</div>
+								<div id="id3"></div>
 							<svg style='margin-top:40px' width="142" height="43" viewBox="0 0 324 87" fill="var(--main)"
 								xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" clip-rule="evenodd"
@@ -214,7 +220,7 @@
 								took 6
 								months of work, crafted in my spare time.
 							</div>
-
+							<div id="id4"></div>
 							<a href="https://lucaburgio.com/insight/the-making-of-particular" class="a-cta">
 								<div class='cta mt50'>
 									Read
@@ -391,6 +397,42 @@
 		updatePosition(); // Initial position setting
 
 	</script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+	// Define element IDs and their corresponding background colors
+	const elements = [
+	  {id: 'id1', color: 'var(--bg)'},
+	  {id: 'id2', color: 'rgb(255, 233, 230)'},
+	  {id: 'id3', color: 'rgb(255, 255, 230)'},
+	  {id: 'id4', color: 'var(--bg)'}
+	];
+	
+	// Function to get the current Y position of an element by ID
+	function getElementYPosition(id) {
+	  const element = document.getElementById(id);
+	  return element.offsetTop;
+	}
+	
+	window.onscroll = function() {
+	  // Get the current scroll position
+	  const scrollY = window.scrollY;
+	
+	  for (let i = 0; i < elements.length; i++) {
+		// Dynamically get the Y position of the current and next element
+		const currentElementY = getElementYPosition(elements[i].id);
+		const nextElementY = i + 1 < elements.length ? getElementYPosition(elements[i + 1].id) : Infinity;
+		
+		// Check if the scroll position is within the current element's range
+		if (scrollY >= currentElementY && scrollY < nextElementY) {
+		  document.body.style.backgroundColor = elements[i].color;
+		  break; // Exit the loop once the correct color is applied
+		}
+	  }
+	};
+});
+	</script>
+	
 </body>
 
 </html>
