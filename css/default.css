@@ -1,4 +1,13 @@
 @font-face {
+  font-family: 'Satoshi-LightItalic';
+  src: url('../fonts/Satoshi-LightItalic.woff2') format('woff2'),
+       url('../fonts/Satoshi-LightItalic.woff') format('woff'),
+       url('../fonts/Satoshi-LightItalic.ttf') format('truetype');
+       font-weight: 300;
+       font-display: swap;
+       font-style: italic;
+}
+@font-face {
   font-family: 'Satoshi-Regular';
   src: url('../fonts/Satoshi-Regular.woff2') format('woff2'),
        url('../fonts/Satoshi-Regular.woff') format('woff'),
@@ -35,7 +44,9 @@
 
   --xs: 18px;
   --sm: 20px;
+  --md: 24px;
 
+  --thin:300;
   --regular: 400;
   --medium: 500;
   --bold: 600;
@@ -94,6 +105,9 @@ span{
 a{
   text-decoration: none;
 }
+b{
+  color: var(--main);
+}
 .a-cta{
   width: fit-content;
   display: block;
@@ -138,13 +152,18 @@ a.list-item:hover{
 
 .text-100{
   color: var(--main);
-  font-size: 5em;
+  font-size: 4.4em;
   font-weight: 700;
   line-height: 1;
   letter-spacing: -4px;
   margin-bottom: 80px;
   margin-left: -6px;
   margin-top: 20px;
+}
+.text-100 span{
+  font-weight: var(--thin);
+  font-style: italic;
+  color: var(--main);
 }
 .text-100 a, .text-500 a, .text-550 a{
   color:var(--main);
@@ -162,7 +181,7 @@ a.list-item:hover{
 }
 .text-200{
   color: var(--main);
-  font-size: 5.6em;
+  font-size: 3.6em;
   font-weight: 700;
   line-height: 0.8;
   letter-spacing: -2px;
@@ -199,6 +218,12 @@ a.list-item:hover{
   font-weight: var(--medium);
   font-size: var(--xs);
   color: var(--secondary);
+}
+.text-503{
+  font-weight: var(--regular);
+  font-size: var(--md);
+  color: var(--secondary);
+  letter-spacing: -1px;
 }
 .text-600 {
   font-weight: 500;
@@ -245,7 +270,7 @@ a.list-item:hover{
 .role .role-title{
   width: 75%;
   max-width: 360px;
-  margin-right: 10%;
+  margin-right: 20%;
 }
 .role .role-descr{
   width: fit-content;
@@ -403,13 +428,15 @@ form button{
 .mt50{margin-top: 50px;}
 .mt60{margin-top: 60px;}
 .mt90{margin-top: 90px;}
+.mt128{margin-top: 128px;}
 
 .mb20{margin-bottom: 20px;}.mb40{margin-bottom: 40px;}.mb50{margin-bottom: 50px;}
+.mb88{margin-bottom: 88px;}
 .mb110{margin-bottom: 110px;}
 .mb140{margin-bottom: 140px;}
 
 .hl1-section {
-  padding: 100px 0;
+  padding: 64px 0;
   margin: 0 0;
 }
 .hl1-section.first-margin{
@@ -471,6 +498,9 @@ form button{
 
 .guideline-in{width: 80%!important;}
 .guideline-out{width: 84%!important;}
+body{
+  width: 90%;
+}
 }
 @media only screen and (min-width: 921px) and (max-width: 1270px) { 
 
@@ -485,13 +515,18 @@ form button{
     width: 100%!important;
     margin-top: 40px;
   }
+  body{
+    width: 90%;
+  }
 }
 
 @media only screen and (min-width: 561px) and (max-width: 920px) { 
 
 .guideline-in{width: 80%;}
 .guideline-out{width: 84%;}
-
+body{
+  width: 90%;
+}
 
 .half20,.half64,.half50{width: 100%;margin:0;text-align: left;}
 .half64 {margin-top: 70px;}
