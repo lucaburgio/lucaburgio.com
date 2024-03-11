@@ -68,14 +68,7 @@
 </head>
 
 <body>
-	<button id="theme-switcher" style="position:fixed;z-index: 99;">
-		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path
-				d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z"
-				stroke="var(--main)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-			<path d="M22 12C22 17.5228 17.5228 22 12 22V2C17.5228 2 22 6.47715 22 12Z" fill="var(--main)" />
-		</svg>
-	</button>
+	<!--<div id="header-grad"></div>-->
 			<div class='main-con'>
 				<script>
 					(function (i, s, o, g, r, a, m) {
@@ -191,97 +184,100 @@
 
 							<!--<img src="images/shots/splice01.png" style="width: 100%;" alt="">-->
 						</div>
-					</div>
-					<canvas style='margin-top: 60px;' id="myChart" width="400" height="100"></canvas>
-					<script>
-						// Step 3: JavaScript to define and render the chart
-						var ctx = document.getElementById('myChart').getContext('2d');
-						var myChart = new Chart(ctx, {
-							type: 'line', // Type of chart
-							data: {
-								labels: ['May 2021', 'Jan 2022', 'Jun 2022', 'Jan 2023', 'Jun 2023', 'Jan 2024'], // X-axis labels
-								datasets: [{
-									label: 'Million of Downloads/Year', // Dataset label
-									data: [0, 0.2, 0.3, 0.4, 0.6, 1.1], // Data points
-									backgroundColor: [
-										'rgba(0, 0, 0, 1)', // Background color of points
-									],
-									borderColor: [
-										'rgba(0, 0, 0, 1)', // Border color of points
-									],
-									borderWidth: 1
-								}]
-							},
-							options: {
-								plugins: {
-									annotation: {
-										annotations: {
-											line3: { // Unique ID for the annotation
-												type: 'line',
-												xMin: 0,
-												xMax: 0,
-												borderColor: 'rgba(0, 0, 0, 0.2)',
-												borderWidth: 1,
-												label: {
-													enabled: true,
-													content: 'Release OS (v4.0)',
-													position: 'end'
+						</div>
+					<div class='main-con'>
+						<canvas style='margin-top: 60px;' id="myChart" width="400" height="100"></canvas>
+						<script>
+							// Step 3: JavaScript to define and render the chart
+							var ctx = document.getElementById('myChart').getContext('2d');
+							var myChart = new Chart(ctx, {
+								type: 'line', // Type of chart
+								data: {
+									labels: ['May 2021', 'Jan 2022', 'Jun 2022', 'Jan 2023', 'Jun 2023', 'Jan 2024'], // X-axis labels
+									datasets: [{
+										label: 'Million of Downloads/Year', // Dataset label
+										data: [0, 0.2, 0.3, 0.4, 0.6, 1.1], // Data points
+										backgroundColor: [
+											'rgba(0, 0, 0, 1)', // Background color of points
+										],
+										borderColor: [
+											'rgba(0, 0, 0, 1)', // Border color of points
+										],
+										borderWidth: 1
+									}]
+								},
+								options: {
+									plugins: {
+										annotation: {
+											annotations: {
+												line3: { // Unique ID for the annotation
+													type: 'line',
+													xMin: 0,
+													xMax: 0,
+													borderColor: 'rgba(0, 0, 0, 0.2)',
+													borderWidth: 1,
+													label: {
+														enabled: true,
+														content: 'Release OS (v4.0)',
+														position: 'end'
+													}
+												},
+												line5: { // Unique ID for the annotation
+													type: 'line',
+													xMin: 4.5,
+													xMax: 4.5,
+													borderColor: 'rgba(0, 0, 0, 0.2)',
+													borderWidth: 1,
+													label: {
+														enabled: true,
+														content: 'v7.0',
+														position: 'end'
+													}
+												},
+												line1: { // Unique ID for the annotation
+													type: 'line',
+													xMin: 3,
+													xMax: 3,
+													borderColor: 'rgba(0, 0, 0, 0.2)',
+													borderWidth: 1,
+													label: {
+														enabled: true,
+														content: 'v6.0',
+														position: 'end'
+													}
+												},
+												line2: { // Unique ID for the annotation
+													type: 'line',
+													xMin: 2,
+													xMax: 2,
+													borderColor: 'rgba(0, 0, 0, 0.2)',
+													borderWidth: 1,
+													label: {
+														enabled: true,
+														content: 'v5.0',
+														position: 'end'
+													}
 												}
-											},
-											line5: { // Unique ID for the annotation
-												type: 'line',
-												xMin: 4.5,
-												xMax: 4.5,
-												borderColor: 'rgba(0, 0, 0, 0.2)',
-												borderWidth: 1,
-												label: {
-													enabled: true,
-													content: 'v7.0',
-													position: 'end'
-												}
-											},
-											line1: { // Unique ID for the annotation
-												type: 'line',
-												xMin: 3,
-												xMax: 3,
-												borderColor: 'rgba(0, 0, 0, 0.2)',
-												borderWidth: 1,
-												label: {
-													enabled: true,
-													content: 'v6.0',
-													position: 'end'
-												}
-											},
-											line2: { // Unique ID for the annotation
-												type: 'line',
-												xMin: 2,
-												xMax: 2,
-												borderColor: 'rgba(0, 0, 0, 0.2)',
-												borderWidth: 1,
-												label: {
-													enabled: true,
-													content: 'v5.0',
-													position: 'end'
-												}
+												
 											}
-											
+										},
+										legend: {
+											display: false // This will hide the label
 										}
 									},
-									legend: {
-										display: false // This will hide the label
-									}
-								},
-								scales: {
-									y: {
-										beginAtZero: true // Y-axis begins at 0
+									scales: {
+										y: {
+											beginAtZero: true // Y-axis begins at 0
+										}
 									}
 								}
-							}
-						});
-					</script>
-					<div class="text-504 mt30">
-						↑ Millions of downloads per year via official website, npm, and GitHub. It excludes forked and unofficial releases.
+							});
+						</script>
+						<div class="text-504 mt30">
+							↑ Millions of downloads per year via official website and npm. It excludes forked and unofficial releases, with a rough estimation of 0.3M downloads.
+						</div>
 					</div>
+					<div style="margin:60px 0;background-color: black;width:100%;height: 600px;"></div>
 					<div class="shots">
 						<img src="images/shots/iconoir-00.png" alt="">
 						<img src="images/shots/iconoir-02.png" alt="">
@@ -461,11 +457,6 @@
 		}
 	</script>
 	<script>
-		document.getElementById('theme-switcher').addEventListener('click', function () {
-			document.body.classList.toggle('dark-theme');
-		});
-	</script>
-	<script>
 		function updatePosition() {
 			const targetDiv = document.querySelector('.text-100');
 			const newDiv = document.querySelector('.title-guideline');
@@ -495,8 +486,15 @@
 	// Define element IDs and their corresponding background colors
 	const elements = [
 	  {id: 'id1', color: 'var(--bg)'},
-	  {id: 'id2', color: 'rgb(255, 233, 230)'},
-	  {id: 'id3', color: 'rgb(255, 255, 230)'},
+	  {id: 'id2', color: 'var(--bg)'},
+	  {id: 'id3', color: 'var(--bg)'},
+	  {id: 'id4', color: 'var(--bg)'}
+	];
+
+	const elements2 = [
+	  {id: 'id1', color: 'var(--bg)'},
+	  {id: 'id2', color: 'rgb(232, 198, 198)'},
+	  {id: 'id3', color: 'rgb(230, 255, 243)'},
 	  {id: 'id4', color: 'var(--bg)'}
 	];
 	

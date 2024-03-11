@@ -52,16 +52,6 @@
   --medium: 500;
   --bold: 600;
 }
-/* Dark theme */
-.dark-theme {
-  --bg: #1A1A1A; /* Dark background */
-  --main: #FFF; /* Light text */
-  --secondary: #a8a8a8;
-  --light-hover: #444;
-  --light: #333;
-  --guidelines: #424242;
-}
-
 html{
 	-ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -71,7 +61,7 @@ body{
   text-rendering: geometricPrecision;
   font-weight: 500;
   margin: auto;
-  max-width: 1280px;
+  width: 98%;
   letter-spacing: 0;
   font-size: 24px;
   line-height: 1.5;
@@ -79,21 +69,34 @@ body{
   background-color: var(--bg);
   transition: background-color 1s;
 }
-#theme-switcher{
-  background-color: transparent;
-  border: 0;
-  top: 300px;
-    right: 10px;
-    position: fixed;
-    cursor: pointer;
-    transition-duration: 0.15s;
+#header-grad{
+  position: fixed;
+  height: 100vh;
+  width: 98%;
+  z-index: -999;
+  background: linear-gradient(45deg, #40403E 0%, #bfbfbf 32.81%, #e9e9e9 65.1%, #e3dfff 100%);
+  background-size: 200% 200%;
+  -webkit-animation: Animation 10s ease infinite;
+  -moz-animation: Animation 10s ease infinite;
+  animation: Animation 10s ease infinite;
 }
-#theme-switcher:hover{
-  scale: 1.2;
-  transition-duration: 0.15s;
+@-webkit-keyframes Animation {
+  0%{background-position:10% 0%}
+  50%{background-position:91% 100%}
+  100%{background-position:10% 0%}
+}
+@-moz-keyframes Animation {
+  0%{background-position:10% 0%}
+  50%{background-position:91% 100%}
+  100%{background-position:10% 0%}
+}
+@keyframes Animation { 
+  0%{background-position:10% 0%}
+  50%{background-position:91% 100%}
+  100%{background-position:10% 0%}
 }
 .main-con{
-  width: 100%;
+  max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
 }
