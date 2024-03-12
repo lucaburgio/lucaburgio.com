@@ -170,9 +170,18 @@ a.list-item:hover{
 .list-item .first{
   width: 400px;
   color: var(--main);
+  margin: auto;
 }
 .list-item .text-501{
   width: inherit;
+  margin: auto;
+}
+.list-image{
+  min-width: 200px;
+  height: 200px;
+  background-size: 100%;
+  background-position: center;
+  transition-duration: 250ms;
 }
 
 /* Typography */
@@ -465,6 +474,7 @@ form button{
 .mt60{margin-top: 60px;}
 .mt90{margin-top: 90px;}
 .mt128{margin-top: 128px;}
+.mt256{margin-top: 256px;}
 
 .mb20{margin-bottom: 20px;}.mb40{margin-bottom: 40px;}.mb50{margin-bottom: 50px;}
 .mb88{margin-bottom: 88px;}
