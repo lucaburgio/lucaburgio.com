@@ -34,9 +34,26 @@
        font-display: swap;
        font-style: normal;
 }
+html{
+  cursor: none;
+}
+.cursor-dot {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out,
+                transform 0.3s ease-in-out;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    mix-blend-mode: difference;
+}
 :root {
-  --bg: #FFF;
-  --main: #000;
+  --bg: #f8f8f8;
+  --main: #222;
   --secondary: #40403E;
   --light-hover: #c7c7c7;
   --light: #d4d4d4;
@@ -133,13 +150,17 @@ b{
 }
 .list{
   display: flex;
-  gap: 64px;
   flex-direction: column;
 }
 .list-item{
   display:flex;
   width:100%;
   gap: 48px;
+  padding: 36px 0;
+  background-image: linear-gradient(to right, rgb(0, 0, 0) 0 10%, rgba(255, 255, 255, 0) 10%);
+  background-position: bottom;
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
 }
 a.list-item:hover{
   text-decoration: underline;
@@ -278,15 +299,15 @@ a.list-item:hover{
   display: flex;
 }
 .role .role-title{
-  width: 45%;
+  width: 55%;
   max-width: 360px;
-  margin-right: 20%;
+  margin-right: 15%;
 }
 .role .role-descr{
   width: fit-content;
 }
 .contacts {
-  font-size: 0.9em;
+  font-size: var(--sm);
   display: inline-block;
   font-weight: 500;
   color: var(--main);
@@ -320,8 +341,9 @@ form button{
 }
 
 .sub-head{
-  font-size: var(--xs);
+  font-size: var(--xxs);
   font-weight: 500;
+  font-style: italic;
   color: var(--main);
   padding: 8px 0;
   border-bottom: 1px solid var(--main);
