@@ -264,7 +264,7 @@ a.list-item:hover{
   line-height: 1.1;
 }
 .text-700{
-  font-size: 1em;
+  font-size: var(--sm);
   color: var(--main);
 }
 .text-800 {
@@ -355,7 +355,7 @@ form button{
   color: var(--main);
   padding: 14px 24px;
   border-radius: 14px;
-  font-size: 0.8em;
+  font-size: var(--sm);
   background-color: rgba(0,0,0,0.1);
   transition: all .2s;
   width: fit-content;
@@ -581,7 +581,13 @@ body{
 .guideline-out{
   width: 90%;
 }
-body{font-size: 16px;margin-left: auto;margin-right: auto;}
+
+body{
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
 .avatar{
   position: inherit;
   width: 70px;
@@ -595,12 +601,8 @@ body{font-size: 16px;margin-left: auto;margin-right: auto;}
 .half20,.half64,.half50{width: 100%;margin:0;text-align: left;}
 .half64 {margin-top: 70px;}
 .main-con.flex{display:inherit;justify-content:inherit;}
-.award.mxm1,.award.mxm2,.award.mxm3,.award.mxm4{margin-left: 0;margin-right:10px;width: 46%;}
+.award.mxm1,.award.mxm2,.award.mxm3,.award.mxm4{margin-left: 0;width: 40%;height: 100px;}
 .award{width: 158px;height: 74px;}
-.cta .text-700 {
-  font-size: 1.4em;
-  line-height: 1.2;
-}
 .cta{
   background-color: #EEE;
   width: 100%;
@@ -609,10 +611,6 @@ body{font-size: 16px;margin-left: auto;margin-right: auto;}
 }
 .cta div{
   margin: auto;
-}
-.cta:hover{
-  background-color: #E1E1E1;
-  transition-duration: 250ms;
 }
 .sub-head{
   font-size: 0.8em;
@@ -635,7 +633,7 @@ html {
 
 .contacts-cont{
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .contacts {
@@ -645,5 +643,8 @@ html {
   margin-right: 0;
   text-align: center;
 }
-
+.a-cta{
+  width: 100%;
+  text-align: center;
+}
 }
