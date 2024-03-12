@@ -10,11 +10,33 @@
 		content="I’m Luca. Product Designer currently based in Milan. Designing pixel stories at Bending Spoons." />
 	<meta name="author" content="Luca Burgio" />
 	<link rel="shortcut icon" href="images/favicon.png">
-	<link rel="stylesheet" type="text/css" href="css/default.css?v=4.61" />
+	<link rel="stylesheet" type="text/css" href="css/default.css?v=5.11" />
 	<script src='js/jquery202.min.js'></script>
-	<script src="js/modernizr.custom.js"></script>
-	<script src="js/anime.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.2"></script>
+	<script src="https://unpkg.com/simple-parallax-js"></script>
+	<script type="module">
+		import confetti from 'https://unpkg.com/canvas-confetti@1.3.2?module';
 
+		document.querySelectorAll('.confetti').forEach(function (element) {
+			element.addEventListener('mouseover', function (event) {
+				var rect = event.target.getBoundingClientRect();
+				var x = (rect.left + rect.right) / 2 / window.innerWidth;
+				var y = (rect.top + rect.bottom) / 2 / window.innerHeight;
+
+				confetti({
+					particleCount: 100,
+					spread: 70,
+					origin: { x: x, y: y }
+				});
+			});
+		});
+	</script>
+	<script src="js/modernizr.custom.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+		rel="stylesheet">
 
 	<link rel="canonical" href="https://lucaburgio.com">
 	<meta property="og:url" content="https://lucaburgio.com">
@@ -47,316 +69,416 @@
 </head>
 
 <body>
-	<!-- test GitHub Pages -->
-	<div class="header shad"></div>
-	<div class="header grad"></div>
-
-	<div class='main-con'>
-		<div class='avatar tooltip' onclick='Speak()'><span class="tooltiptext" id="saying">Hey! Click me.</span></div>
-		<div class='bold-head black100'>Luca Burgio</div>
-		<div class="title black100">
-			Product Design Lead at Bending Spoons.<br>
-			Previously Android Design Lead at Musixmatch.<br>
-			Creator of <a href="https://iconoir.com">Iconoir</a> and <a
-				href="https://lucaburgio.com/insight/the-making-of-particular">Particular</a>.
-		</div>
-		<div class="contacts-cont">
-			<a class="contacts button" href="https://superpeer.com/lucaburgio">Book a 1:1 call</a>
-			<a class="contacts" href="http://twitter.com/burgioluca">X (Twitter)</a>
-			<a class="contacts" href="https://www.linkedin.com/in/burgioluca">LinkedIn</a>
-			<a class="contacts" href="mailto:hi@lucaburgio.com">Email</a>
-		</div>
-	</div>
-
-	<div class='hl1-section first-margin'>
-		<div class='main-con flex'>
-			<div class='half1'>
-
-				<div class='sub-head black100'>ROLES</div>
-				<div class='role mb90'>
-					<div class='role-title h6 black100 w5'>
-						<div class='gray mb20 w4 label' style='font-size:17px'>Currently</div>
-						Function Lead of Product Design
-						<div class='gray mt20 w4' style='font-size:20px'>Bending Spoons</div>
-					</div>
-					<div class='role-descr h8 black60 mt50'>Bending Spoons is an elite team who creates their own tech
-						products, used and loved by millions all around the world. Currently focused on mobile apps, and
-						they’re constantly evaluating opportunities in other exciting fields.</div>
+	<div class="cursor-dot"></div>
+	<!--<div id="header-grad"></div>-->
+			<div class='main-con'>
+				<script>
+					(function (i, s, o, g, r, a, m) {
+						i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+							(i[r].q = i[r].q || []).push(arguments)
+						}, i[r].l = 1 * new Date(); a = s.createElement(o),
+							m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+					})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+					ga('create', 'UA-33344001-6', 'auto');
+					ga('send', 'pageview');
+				</script>
+				<div class='avatar tooltip' onclick='Speak()'><span class="tooltiptext" id="saying">Hey! Click
+						me.</span></div>
+				<div class='text-700 mt50'>Hey, I’m Luca.</div><div id="id1"></div>
+				<div class='text-100'>
+					<span>Currently</span> Head of Design at Bending Spoons. <span>Previously</span> Android Lead Designer at Musixmatch.<br>
 				</div>
-				<div class='role mb140'>
-					<div class='role-title h6 black100 w5'>
-						<div class='gray mb20 w4 label' style='font-size:17px'>2013 - 2018</div>
-						Android Lead Designer
-						<div class='gray mt20 w4' style='font-size:20px'>Musixmatch</div>
-					</div>
-					<div class='role-descr h8 black60 mt50'>Musixmatch is the world’s largest lyrics platform - where
-						you can search, enjoy, and share lyrics from any track, anywhere in the world.</div>
+				<div class="contacts-cont">
+					<a class="contacts button" href="https://superpeer.com/lucaburgio">Book a 1:1 call</a>
+					<a class="contacts" href="http://twitter.com/burgioluca">X (Twitter)</a>
+					<a class="contacts" href="https://www.linkedin.com/in/burgioluca">LinkedIn</a>
+					<a class="contacts" href="mailto:hi@lucaburgio.com">Email</a>
+					<a class="contacts" href="/join">Join my newsletter</a>
 				</div>
 			</div>
 
-			<div class='half2'>
+			<div class='hl1-section first-margin'>
+				<div class='main-con'>
 
-				<div class='sub-head black100'>PROJECTS</div>
+					<div class='sub-head'>Experience</div>
+					<div class='role mb88'>
+						<div class='role-title'>
 
-				<a href="https://lucaburgio.com/insight/the-making-of-particular" class='projects-item'>
-					<div class='h7 w5 trasl'>Particular
-						<svg style="margin-left: 10px;" width="27" height="10" viewBox="0 0 27 10"
-							xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd"
-								d="M21.941 0.155L21.319 0.717C21.188 0.837 21.122 0.999 21.122 1.163C21.122 1.306 21.174 1.45 21.278 1.566C21.287 1.576 21.296 1.584 21.306 1.594L23.416 3.63H0.601C0.269 3.63 0 3.896 0 4.229V5.03C0 5.362 0.269 5.63 0.601 5.63H23.429L21.328 7.657C21.089 7.886 21.081 8.266 21.312 8.505C21.318 8.511 21.324 8.516 21.329 8.521L21.936 9.099C22.168 9.321 22.534 9.321 22.765 9.097L26.66 5.343C27.064 4.952 27.064 4.318 26.66 3.928L22.759 0.168C22.644 0.0560002 22.495 0 22.345 0C22.2 0 22.056 0.0510002 21.941 0.155Z" />
-						</svg>
+							<div class='text-300 mb20'>Head of Design</div>
+							<div class='text-700'>Bending Spoons</div>
+							<div class='text-502'>2018 - Present</div>
+						</div>
+						<div class='role-descr text-501'>Leading, managing, and supporting the Product Design function of 15+ designers. Driving and helping in sharing and adopting best practices and methods across design teams. Building and improving our design organization and operations.</div>
 					</div>
-				</a>
-				<div class='h8 black60 mt10 mb50'>An awarded running game.
-				</div>
+					<div class='role mb88'>
+						<div class='role-title'>
 
-				<a href="https://iconoir.com" class='projects-item'>
-					<div class='h7 w5 trasl'>Iconoir
-
-						<svg style="margin-left: 10px;" width="27" height="10" viewBox="0 0 27 10"
-							xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd"
-								d="M21.941 0.155L21.319 0.717C21.188 0.837 21.122 0.999 21.122 1.163C21.122 1.306 21.174 1.45 21.278 1.566C21.287 1.576 21.296 1.584 21.306 1.594L23.416 3.63H0.601C0.269 3.63 0 3.896 0 4.229V5.03C0 5.362 0.269 5.63 0.601 5.63H23.429L21.328 7.657C21.089 7.886 21.081 8.266 21.312 8.505C21.318 8.511 21.324 8.516 21.329 8.521L21.936 9.099C22.168 9.321 22.534 9.321 22.765 9.097L26.66 5.343C27.064 4.952 27.064 4.318 26.66 3.928L22.759 0.168C22.644 0.0560002 22.495 0 22.345 0C22.2 0 22.056 0.0510002 21.941 0.155Z" />
-						</svg>
+							<div class='text-300 mb20'>Android Lead Designer</div>
+							<div class='text-700'>Musixmatch</div>
+							<div class='text-502'>2013 - 2018</div>
+						</div>
+						<div class='role-descr text-501'>Lead the design of all the Android products, at Musixmatch, the world's largest lyrics provider for big players such as Google, Apple Music, Spotify, Tidal, Deezer, and Amazon Music. Released products such as Android TV, Wear OS, Google Glasses, and Android OS apps.
+							<div class="awards">
+								<div class="award mxm1"></div>
+								<div class="award mxm2"></div>
+								<div class="award mxm3"></div>
+								<div class="award mxm4"></div>
+							</div>
+							The Musixmatch app got a Google i/O 2016 Award Nominee and the awards Best App Apple Store 2013,
+							and Best App Google Play 2014, 2015, 2018.
+							
+						</div>
+						<div id="id2"></div>
 					</div>
-				</a>
-
-				<div class='h8 black60 mt10 mb50'>A simple and definitive open-source SVG icons library.</div>
+				</div>
 
 
-				<a href="https://www.instagram.com/holoseries/" class='projects-item'>
-					<div class='h7 w5 trasl'>Holo Series
 
-						<svg style="margin-left: 10px;" width="27" height="10" viewBox="0 0 27 10"
-							xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd"
-								d="M21.941 0.155L21.319 0.717C21.188 0.837 21.122 0.999 21.122 1.163C21.122 1.306 21.174 1.45 21.278 1.566C21.287 1.576 21.296 1.584 21.306 1.594L23.416 3.63H0.601C0.269 3.63 0 3.896 0 4.229V5.03C0 5.362 0.269 5.63 0.601 5.63H23.429L21.328 7.657C21.089 7.886 21.081 8.266 21.312 8.505C21.318 8.511 21.324 8.516 21.329 8.521L21.936 9.099C22.168 9.321 22.534 9.321 22.765 9.097L26.66 5.343C27.064 4.952 27.064 4.318 26.66 3.928L22.759 0.168C22.644 0.0560002 22.495 0 22.345 0C22.2 0 22.056 0.0510002 21.941 0.155Z" />
-						</svg>
+
+
+
+				<div class='hl1-section' style='margin-bottom:0px;'>
+					<div class='main-con flex'>
+						<div class='half64'>
+							<div class='sub-head'>Project</div>
+							<div class='text-200'>Iconoir</div>
+							
+							<div class="text-500 mb40">
+								The open-source library with 1500+ icons.
+							</div>
+							<div class="text-501">
+								Iconoir is one of the biggest open source SVG Icons libraries. No premium icons, no
+								email
+								sign-up, no newsletters.
+								Iconoir is available on Figma, React and React Libraries, CSS and happily integrated in
+								Framer.
+							</div>
+							<a href="https://iconoir.com" class="a-cta">
+								<div class='cta mt50'>
+									Take a look
+									<svg width="27" height="12" viewBox="0 0 27 10" fill="var(--main)"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M21.941 0.155L21.319 0.717C21.188 0.837 21.122 0.999 21.122 1.163C21.122 1.306 21.174 1.45 21.278 1.566C21.287 1.576 21.296 1.584 21.306 1.594L23.416 3.63H0.601C0.269 3.63 0 3.896 0 4.229V5.03C0 5.362 0.269 5.63 0.601 5.63H23.429L21.328 7.657C21.089 7.886 21.081 8.266 21.312 8.505C21.318 8.511 21.324 8.516 21.329 8.521L21.936 9.099C22.168 9.321 22.534 9.321 22.765 9.097L26.66 5.343C27.064 4.952 27.064 4.318 26.66 3.928L22.759 0.168C22.644 0.0560002 22.495 0 22.345 0C22.2 0 22.056 0.0510002 21.941 0.155Z" />
+									</svg>
+								</div>
+							</a>
+						</div>
+						<div class='half30 data'>
+							<div class='sub-head'>Data</div>
+							<div class='text-500'>Started / Released as OSS</div>
+							<div class='text-501'>2018 / 2021</div>
+							<div class='text-500 mt60'>Downloads per Year</div>
+							<div class='text-501'>1 Million</div>
+							<div class='text-500 mt60'>Achievements</div>
+							<div class='text-501 confetti'>Used in HBO series Westworld S4.<br>Integrated in
+								Framer editor.</div>
+								<div id="id3"></div>
+							<svg style='margin-top:40px' width="142" height="43" viewBox="0 0 324 87" fill="var(--main)"
+								xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M57.9716 83.365H36.3399V52.4141H22.298V83.365H0V3.59375H22.298V33.2679H36.3399V3.59375H57.9716V83.365Z" />
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M157.078 58.8428C165.855 58.8428 172.971 51.7105 172.971 42.91C172.971 34.1118 165.855 26.9784 157.078 26.9784C148.299 26.9784 141.184 34.1118 141.184 42.91C141.184 51.7105 148.299 58.8428 157.078 58.8428ZM136.86 42.91C136.86 31.7178 145.911 22.6436 157.078 22.6436C168.244 22.6436 177.297 31.7178 177.297 42.91C177.297 54.1041 168.244 63.1779 157.078 63.1779C145.911 63.1779 136.86 54.1041 136.86 42.91ZM108.707 42.91C111.208 42.5924 115.379 39.7252 116.848 37.895C116.332 40.1643 116.292 46.7324 116.896 49.0017C115.219 46.414 111.249 43.2288 108.707 42.91ZM94.1714 21.4541C97.3486 21.4541 99.8508 24.5981 99.8508 28.1813C99.8508 31.7645 97.3486 34.9105 94.1714 34.9105H83.2507V21.4541H94.1714ZM94.1315 51.3498C97.3083 51.3498 99.8109 54.4954 99.8109 58.0774C99.8109 61.661 97.3083 64.8054 94.1315 64.8054H83.2108V51.3498H94.1315ZM157.064 83.7454C179.317 83.7368 197.426 65.2034 197.421 42.8943C197.416 20.1148 179.317 2.41923 157.064 2.40236C134.838 2.38629 123.481 18.7868 120.675 25.4066C120.701 15.4691 110.93 3.73934 99.5003 3.7268H62.6758V83.349L97.0087 83.3557C110.851 83.3557 120.701 71.3327 120.717 61.0231C123.877 67.5116 134.838 83.7533 157.064 83.7454Z" />
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M323.209 0.78125H265.534L294.829 30.0215H323.209V0.78125ZM265.537 57.5408H265.492V30.0206H294.769L322.291 57.5408H294.829V86.7785L265.537 57.5408Z" />
+							</svg>
+
+							<!--<img src="images/shots/splice01.png" style="width: 100%;" alt="">-->
+						</div>
+						</div>
+					<div class='main-con'>
+						<canvas style='margin-top: 60px;' id="iconoirChart" width="400" height="100"></canvas>
+						<script>
+							// Step 3: JavaScript to define and render the chart
+							var ctx = document.getElementById('iconoirChart').getContext('2d');
+							var iconoirChart = new Chart(ctx, {
+								type: 'line', // Type of chart
+								data: {
+									labels: ['May 2021', 'Jan 2022', 'Jun 2022', 'Jan 2023', 'Jun 2023', 'Jan 2024'], // X-axis labels
+									datasets: [{
+										label: 'Million of Downloads/Year', // Dataset label
+										data: [0, 0.2, 0.3, 0.4, 0.6, 1.1], // Data points
+										backgroundColor: [
+											'rgba(0, 0, 0, 1)', // Background color of points
+										],
+										borderColor: [
+											'rgba(0, 0, 0, 1)', // Border color of points
+										],
+										borderWidth: 1
+									}]
+								},
+								options: {
+									plugins: {
+										annotation: {
+											annotations: {
+												line3: { // Unique ID for the annotation
+													type: 'line',
+													xMin: 0,
+													xMax: 0,
+													borderColor: 'rgba(0, 0, 0, 0.2)',
+													borderWidth: 1,
+													label: {
+														enabled: true,
+														content: 'Release OS (v4.0)',
+														position: 'end'
+													}
+												},
+												line5: { // Unique ID for the annotation
+													type: 'line',
+													xMin: 4.5,
+													xMax: 4.5,
+													borderColor: 'rgba(0, 0, 0, 0.2)',
+													borderWidth: 1,
+													label: {
+														enabled: true,
+														content: 'v7.0',
+														position: 'end'
+													}
+												},
+												line1: { // Unique ID for the annotation
+													type: 'line',
+													xMin: 3,
+													xMax: 3,
+													borderColor: 'rgba(0, 0, 0, 0.2)',
+													borderWidth: 1,
+													label: {
+														enabled: true,
+														content: 'v6.0',
+														position: 'end'
+													}
+												},
+												line2: { // Unique ID for the annotation
+													type: 'line',
+													xMin: 2,
+													xMax: 2,
+													borderColor: 'rgba(0, 0, 0, 0.2)',
+													borderWidth: 1,
+													label: {
+														enabled: true,
+														content: 'v5.0',
+														position: 'end'
+													}
+												}
+												
+											}
+										},
+										legend: {
+											display: false // This will hide the label
+										}
+									},
+									scales: {
+										y: {
+											beginAtZero: true // Y-axis begins at 0
+										}
+									}
+								}
+							});
+						</script>
+						<div class="text-504 mt30">
+							↑ Millions of downloads per year via official website and npm. It excludes forked and unofficial releases, with a rough estimation of 0.3M downloads.
+						</div>
+						
 					</div>
-				</a>
-
-				<div class='h8 black60 mt10 mb50'>A visual art exploration and playground.</div>
-			</div>
-		</div>
-	</div>
-	<div class='hl1-section mt0' style='margin-bottom:0px;'>
-		<div class='main-con flex'>
-			<div class='sub-head black100 w100'>AWARDS AND ACHIEVEMENTS</div>
-		</div>
-		<div class='main-con flex'>
-			<div class='half3'>
-
-				<div class="award particular"></div>
-				<div class='h8 black60 mt50'>Particular was featured by Apple in Europe the first week of the release,
-					in 2016. The game, available for iOS and Android reached <b class='black100'>756.000 downloads.</b>
-				</div>
-				<div class='h8 black60 mt50 mb50'>The game was born as a personal exploration of the world behind Unity
-					Engine. Particular took 6 months of work, crafted in my spare time.</div>
-
-				<!--<a class="btn" href="https://lucaburgio.com/insight/the-making-of-particular"><div>Read the story</div></a>-->
-
-				<a href="https://lucaburgio.com/insight/the-making-of-particular" class='cta'>
-					<div class='h7 w5 trasl'>Read the story
-
-						<svg style="margin-left: 10px;" width="27" height="10" viewBox="0 0 27 10"
-							xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd"
-								d="M21.941 0.155L21.319 0.717C21.188 0.837 21.122 0.999 21.122 1.163C21.122 1.306 21.174 1.45 21.278 1.566C21.287 1.576 21.296 1.584 21.306 1.594L23.416 3.63H0.601C0.269 3.63 0 3.896 0 4.229V5.03C0 5.362 0.269 5.63 0.601 5.63H23.429L21.328 7.657C21.089 7.886 21.081 8.266 21.312 8.505C21.318 8.511 21.324 8.516 21.329 8.521L21.936 9.099C22.168 9.321 22.534 9.321 22.765 9.097L26.66 5.343C27.064 4.952 27.064 4.318 26.66 3.928L22.759 0.168C22.644 0.0560002 22.495 0 22.345 0C22.2 0 22.056 0.0510002 21.941 0.155Z" />
-						</svg>
+					<!--<img src="images/t.png" style="width: 100%;" alt="Parallax Image" class="parallax-image">
+					<div style="margin:60px 0;background-color: black;width:100%;height: 600px;"></div>-->
+					<div class="shots">
+						<img src="images/shots/iconoir-00.png" alt="">
+						<img src="images/shots/iconoir-02.png" alt="">
+						<img src="images/shots/iconoir-01.png" alt="">
 					</div>
-				</a>
-			</div>
-			<div class='half4 txtright'>
-				<div class='fit'>
-					<div class="award mxm1"></div>
-					<div class="award mxm2"></div>
-					<div class="award mxm3"></div>
-					<div class="award mxm4"></div>
-				</div>
-				<div class='h8 black60 mt10 s1hs'>As Product Designer and Android Lead Designer at Musixmatch, I was
-					involved in the entire product process of the company. We reached important goals during the years
-					with a neat design and new features.</div>
-				<div class='h8 black60 mt50 s1hs'>The product was largely spread out to Android, iOS, TV, Watch and web.
-				</div>
-			</div>
-		</div>
-	</div>
-	</div>
-
-
-
-
-	<div class='hl1-section' style='margin-bottom:0px;'>
-		<div class='main-con flex'>
-			<div class='half5'>
-				<div class='sub-head black100'>TALKS</div>
-
-				<div style='border-bottom: 1px solid #D9D9D9;' class='mb50'>
-					<div class='h6 black100 w5' style='max-width: 280px;'>Politecnico di Milano</div>
-					<div class='h8 black60 mt30 mb50'>Presenting 'Process of designing Products'. The complete process
-						behind the build of a product, in that case, an app. The entire flow, starting from the User
-						Experience and the wireframing, The Design, The Prototyping, The Finalization and the last step,
-						the Development.</div>
 				</div>
 
-				<div style='border-bottom: 1px solid #D9D9D9;' class='mb50'>
-					<div class='h6 black100 w5' style='max-width: 280px;'>Dribbble Event Milan 2019</div>
-					<div class='h8 black60 mt30 mb50'>The Dribbble event at Bending Spoons HQ, in Milan. Presenting
-						Figma, Prototyping tools and the process of designing products.</div>
-				</div>
 
-				<div style='border-bottom: 1px solid #D9D9D9;' class='mb50'>
-					<div class='h6 black100 w5' style='max-width: 280px;'>Polimi Interaction Design Class</div>
-					<div class='h8 black60 mt30 mb50'>Presenting the use of prototypes to improve the Design Process and
-						to avoid common UX mistakes, and common rules to consider during the study of an efficient User
-						Experience.</div>
-				</div>
 
-			</div>
-			<div class='half6'>
-				<div class='sub-head black100'>ARTICLES</div>
 
-				<div class='h6 black100 w5'>The Making Of Particular</div>
-				<div class='h8 black60 mt30 mb50'>Most of you probably don't know about Particular and its story because
-					I had never decided to publish it – until now – four years later. [...]</div>
 
-				<a href="https://lucaburgio.com/insight/the-making-of-particular" class='cta mb100'>
-					<div class='h7 w5 trasl'>Read
-						<svg style="margin-left: 10px;" width="27" height="10" viewBox="0 0 27 10"
-							xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd"
-								d="M21.941 0.155L21.319 0.717C21.188 0.837 21.122 0.999 21.122 1.163C21.122 1.306 21.174 1.45 21.278 1.566C21.287 1.576 21.296 1.584 21.306 1.594L23.416 3.63H0.601C0.269 3.63 0 3.896 0 4.229V5.03C0 5.362 0.269 5.63 0.601 5.63H23.429L21.328 7.657C21.089 7.886 21.081 8.266 21.312 8.505C21.318 8.511 21.324 8.516 21.329 8.521L21.936 9.099C22.168 9.321 22.534 9.321 22.765 9.097L26.66 5.343C27.064 4.952 27.064 4.318 26.66 3.928L22.759 0.168C22.644 0.0560002 22.495 0 22.345 0C22.2 0 22.056 0.0510002 21.941 0.155Z" />
-						</svg>
+
+
+				<div class='hl1-section' style='margin-bottom:0px;'>
+					<div class='main-con flex'>
+						<div class='half64'>
+							<div class='sub-head'>Project</div>
+							<div class='text-200'>Particular</div>
+							<div class="text-500 mb40">
+								A mobile game for iOS and Android.
+							</div>
+
+							<div class="text-501">
+								Particular was featured by Apple in Europe the first week of the release, in 2016. The
+								game,
+								available for iOS and Android reached 756,000 downloads.<br><br>
+								The game was born as a personal exploration of the world behind Unity Engine. Particular
+								took 6
+								months of work, crafted in my spare time.
+							</div>
+							<div id="id4"></div>
+							<a href="/insight/the-making-of-particular.html" class="a-cta">
+								<div class='cta mt50'>
+									Read
+									<svg width="27" height="12" viewBox="0 0 27 10" fill="var(--main)"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M21.941 0.155L21.319 0.717C21.188 0.837 21.122 0.999 21.122 1.163C21.122 1.306 21.174 1.45 21.278 1.566C21.287 1.576 21.296 1.584 21.306 1.594L23.416 3.63H0.601C0.269 3.63 0 3.896 0 4.229V5.03C0 5.362 0.269 5.63 0.601 5.63H23.429L21.328 7.657C21.089 7.886 21.081 8.266 21.312 8.505C21.318 8.511 21.324 8.516 21.329 8.521L21.936 9.099C22.168 9.321 22.534 9.321 22.765 9.097L26.66 5.343C27.064 4.952 27.064 4.318 26.66 3.928L22.759 0.168C22.644 0.0560002 22.495 0 22.345 0C22.2 0 22.056 0.0510002 21.941 0.155Z" />
+									</svg>
+								</div>
+							</a>
+						</div>
+						<div class='half30 data'>
+							<div class='sub-head'>Data</div>
+							<div class='text-500'>Published</div>
+							<div class='text-501'>2016</div>
+							<div class='text-500 mt60'>Downloads</div>
+							<div class='text-501'>760K</div>
+							<div class='text-500 mt60'>Achievements</div>
+							<div class='text-501 confetti'>“Games we love” Europe - Apple 2016</div>
+
+							<svg style="scale: 0.86;margin: 40px -20px;" xmlns="http://www.w3.org/2000/svg" width="177" height="86" fill="var(--main)">
+								<path fill-rule="evenodd"
+									d="M24.1 3.6c-3 2.8-4 7.6-4 7.6s5.4-1 8.6-4A12 12 0 0 0 32.3 0s-5.1.8-8.2 3.6Zm-5.8 10.2c-2.6 1-4.7 5.4-4.7 5.4s4.9 0 7.5-1c2.6-1 6.3-4.4 6.3-4.4s-6.4-1-9 0Zm-11 15.4s-3.3-3-2.8-7.8c.6-4.8 4.6-8.4 4.6-8.4s1.5 3.4 1 8.1c-.6 4.7-2.9 8.1-2.9 8.1Zm-6.3 6c.7 3 4.8 6.3 4.8 6.3s.7-5.4 0-8.4c-.6-3-3.4-7.5-3.4-7.5s-2 6.5-1.4 9.6Zm7 18.3S3 51.6 1.3 48.6c-1.7-3-1.4-9.2-1.4-9.2s4 2.8 5.7 5.9c1.7 3 2.2 8.2 2.2 8.2Zm10 12.9c1 2.6 6 5.6 6 5.6s-.3-5-1.4-7.9a20.8 20.8 0 0 0-4-5.8s-1.7 5.5-.7 8.1Zm-4.2-2.1s-1.5-3.8-4.3-6.4c-2.8-2.6-7.3-4.4-7.3-4.4s-.2 5 3 7.9c3 3 8.6 2.9 8.6 2.9ZM17.3 12a18.8 18.8 0 0 1-5.2 6.3s-.6-5.9.6-8.5c1.2-2.6 7.3-7 7.3-7s-1 5.5-2.7 9.2ZM8.7 29.9s-.3-4.2 2.4-6.5c2.8-2.3 8.2-2.5 8.2-2.5s-1.4 3.7-4 5.9c-2.5 2.2-6.6 3.1-6.6 3.1ZM8.2 34c-2.2 3.5-1 7.5-1 7.5s3.5-1.2 5.5-4.4 2.1-7.4 2.1-7.4-4.3.8-6.6 4.3Zm1.1 19s-2.2-4.1-1-8.2c1.3-4.1 5-5 5-5s1.3 3 0 7.1c-1.2 4.2-4 6.1-4 6.1Zm2 3.3c0 3.3 3.7 7.4 3.7 7.4s2-3.8 2-7.2c-.2-3.3-2.6-7.1-2.6-7.1s-3.3 3.6-3.2 6.9Zm11.6 16.5s-3.7-3.6-6.8-5C13.1 66.4 8 66 8 66s1.8 4.6 5 6c3 1.4 10 .8 10 .8Zm1.9.6c-.1.2 0 .4.1.5 2.8 1.7 5.4 2.8 7.7 3.5 2.3.6 5.3 1 9 1.3.2 0 .4-.2.4-.4s-.1-.4-.4-.4c-3.6-.2-6.5-.6-8.8-1.3-2.2-.6-4.7-1.7-7.5-3.3a.4.4 0 0 0-.5.1ZM152.3 3.6c3 2.8 4 7.6 4 7.6s-5.4-1-8.6-4C144.4 4.2 144 0 144 0s5.1.8 8.2 3.6Zm5.8 10.2c2.6 1 4.7 5.4 4.7 5.4s-4.9 0-7.5-1c-2.7-1-6.3-4.4-6.3-4.4s6.4-1 9 0Zm11 15.4s3.3-3 2.8-7.8c-.6-4.8-4.6-8.4-4.6-8.4s-1.5 3.4-1 8.1c.6 4.7 2.9 8.1 2.9 8.1Zm6.3 6c-.7 3-4.8 6.3-4.8 6.3s-.7-5.4 0-8.4c.6-3 3.4-7.5 3.4-7.5s2 6.5 1.4 9.6Zm-7 18.3s4.9-1.9 6.6-4.9c1.7-3 1.4-9.2 1.4-9.2s-4 2.8-5.7 5.9c-1.7 3-2.2 8.2-2.2 8.2Zm-10 12.9c-1 2.6-6 5.6-6 5.6s.2-5 1.4-7.9c1.1-2.9 4-5.8 4-5.8s1.7 5.5.7 8.1Zm4.2-2.1s1.5-3.8 4.3-6.4c2.8-2.6 7.3-4.4 7.3-4.4s.2 5-3 7.9c-3 3-8.6 2.9-8.6 2.9ZM159 12c1.7 3.8 5.2 6.3 5.2 6.3s.6-5.9-.6-8.5c-1.2-2.6-7.3-7-7.3-7s1 5.5 2.7 9.2Zm8.6 17.9s.3-4.2-2.4-6.5c-2.8-2.3-8.2-2.5-8.2-2.5s1.4 3.7 4 5.9a18 18 0 0 0 6.6 3.1Zm.5 4.1c2.2 3.5 1 7.5 1 7.5s-3.5-1.2-5.5-4.4-2.1-7.4-2.1-7.4 4.3.8 6.6 4.3ZM167 53s2.2-4.1 1-8.2c-1.3-4.1-5-5-5-5s-1.3 3 0 7.1c1.2 4.2 4 6.1 4 6.1Zm-2 3.3c0 3.3-3.7 7.4-3.7 7.4s-2-3.8-2-7.2c.2-3.3 2.6-7.1 2.6-7.1s3.3 3.6 3.2 6.9Zm-11.6 16.5s3.7-3.6 6.8-5c3-1.4 8.2-1.8 8.2-1.8s-1.8 4.6-5 6c-3 1.4-10 .8-10 .8Zm-1.9.6c.1.2 0 .4-.1.5a34.5 34.5 0 0 1-7.7 3.5c-2.3.6-5.3 1-9 1.3a.4.4 0 0 1-.4-.4c0-.2.1-.4.3-.4 3.7-.2 6.6-.6 8.9-1.3 2.2-.6 4.7-1.7 7.5-3.3.2-.2.4 0 .5.1Z"
+									clip-rule="evenodd" />
+								<path
+									d="M61 33.7h-4v1.5h2.1c0 1.3-1 2.1-2.2 2.1-1.4 0-2.5-1-2.5-3.3 0-2.4 1-3.4 2.4-3.4 1 0 1.8.5 2.2 1.6l2-.2c-.7-2-2.2-3.1-4.2-3.1-2.4 0-4.3 1.8-4.3 5 0 3.3 1.9 5.1 4.4 5.1 2.3 0 4-1.5 4-3.8v-1.5Zm2.9 5.2.7-2.1h3.8l.7 2.1h2L67.5 29h-2L61.8 39h2Zm2.5-7.5h.1l1.3 3.8h-2.7l1.3-3.8Zm5.9-2.4V39h1.9v-6.8l2.6 6.7h1.4l2.6-6.6h.1v6.7h1.9V29h-2.4L77.6 36h-.1L74.7 29h-2.4Zm18.6 8.3h-4.6v-2.5h4v-1.6h-4v-2.6h4.5V29h-6.4V39H91v-1.6Zm6.7-5.5h1.9c0-1.8-1.5-3-3.6-3-2 0-3.5 1.2-3.5 2.9 0 1.4 1.1 2.3 2.7 2.8l.5.1c1.5.5 2 .9 2 1.6 0 .7-.6 1.2-1.7 1.2s-1.9-.5-2-1.5h-1.8c0 2.1 1.7 3.2 3.8 3.2 2.2 0 3.6-1.2 3.6-3 0-1.5-1-2.3-2.9-3h-.5c-1.2-.4-1.9-.8-1.9-1.4 0-.7.7-1.2 1.7-1.2s1.7.5 1.7 1.3Zm8.5-2.8h-1.7l2.5 9.9h2l1.8-6.7 1.9 6.7h2L117 29h-1.8l-1.8 7.1-1.9-7h-1.8l-1.8 7-1.9-7Zm18.7 8.3h-4.5v-2.5h3.9v-1.6h-3.9v-2.6h4.5V29h-6.4V39h6.4v-1.6Zm-74.6 16H46V45h-1.9V55h6.1v-1.6ZM60 50c0-3.3-1.8-5.1-4.3-5.1s-4.4 1.8-4.4 5c0 3.3 1.9 5.1 4.4 5.1 2.5 0 4.3-1.8 4.3-5ZM58 50c0 2.3-1 3.3-2.4 3.3S53 52.3 53 50c0-2.4 1-3.4 2.5-3.4 1.4 0 2.4 1 2.4 3.4Zm4.1-5h-2l3.7 9.9h2l3.7-9.9h-2l-2.6 7.5h-.2L62.1 45Zm15 8.3h-4.6v-2.5h3.9v-1.6h-3.9v-2.6H77V45h-6.4V55H77v-1.6Zm11.7 0h-4.5v-2.5h3.9v-1.6h-3.9v-2.6h4.5V45h-6.4V55h6.4v-1.6Zm7.6-8.3v6.5c0 1.1-.8 1.8-2 1.8s-2-.7-2-1.8V45h-2v6.5c0 2.3 1.7 3.6 4 3.6s4-1.3 4-3.6V45h-2Zm9 9.9h2.2l-2-4c1-.6 1.6-1.4 1.6-2.8 0-1.9-1.1-3-3.5-3h-3.6v9.8h1.9v-3.7h1.6l1.9 3.7Zm-3.4-8.3h1.7c1.1 0 1.6.6 1.6 1.5 0 1-.5 1.5-1.6 1.5H102v-3Zm15 3.4c0-3.3-2-5.1-4.4-5.1-2.5 0-4.4 1.8-4.4 5 0 3.3 1.9 5.1 4.4 5.1 2.5 0 4.3-1.8 4.3-5Zm-2 0c0 2.3-1 3.3-2.4 3.3s-2.5-1-2.5-3.3c0-2.4 1-3.4 2.5-3.4 1.4 0 2.4 1 2.4 3.4Zm7 1.4c2.4 0 3.4-1.2 3.4-3.2 0-1.9-1-3.2-3.4-3.2h-3.7V55h2v-3.5h1.7Zm-1.8-4.8h1.8c1.2 0 1.6.7 1.6 1.6 0 1-.4 1.7-1.6 1.7h-1.8v-3.3Zm13.2 6.7H129v-2.5h3.9v-1.6h-4v-2.6h4.6V45H127V55h6.4v-1.6ZM57.4 12.3l.9-2.5h3.9l.9 2.5h1.1L60.8 3h-1.1l-3.5 9.3h1.2Zm2.8-7.8h.1l1.5 4.3h-3.1l1.5-4.3Zm5.3 10.4h1.1v-3.7h.1c.2.4.7 1.2 2 1.2 1.8 0 3-1.4 3-3.6s-1.2-3.6-3-3.6c-1.3 0-1.8.9-2 1.2h-.1v-1h-1v9.5Zm5.1-6c0 1.4-.7 2.6-2 2.6s-2-1.1-2-2.7.7-2.6 2-2.6c1.4 0 2 1.1 2 2.6Zm2.7 6h1.1v-3.7h.1c.2.4.7 1.2 2 1.2 1.8 0 3-1.4 3-3.6s-1.2-3.6-3-3.6c-1.3 0-1.8.9-2 1.2h-.1v-1h-1v9.5Zm5.1-6c0 1.4-.7 2.6-2 2.6s-2-1.1-2-2.7.7-2.6 2-2.6c1.4 0 2 1.1 2 2.6ZM90 5.3H91c0-1.5-1.3-2.5-3.1-2.5s-3.2 1-3.2 2.6c0 1.2 1 2 2.4 2.4l1.1.3c1.3.4 1.9.7 1.9 1.6 0 1-1 1.6-2.3 1.6-1.1 0-2-.4-2.2-1.5h-1.1c0 1.5 1.3 2.6 3.3 2.6 2.1 0 3.4-1.2 3.4-2.7 0-1.3-.9-2.1-2.7-2.6l-.9-.2c-1.2-.4-1.8-.8-1.8-1.6 0-.9.8-1.5 2-1.5s2 .5 2.1 1.5Zm5.9 0h-1.5V3.7h-1v1.5h-1.1v1h1v4.3c0 1.2 1 1.8 2 1.8l.7-.1-.2-1h-.5c-.4 0-.9 0-.9-1v-4h1.5v-1Zm4.4 7c1.9 0 3.1-1.4 3.1-3.6 0-2.1-1.2-3.6-3.1-3.6-2 0-3.2 1.5-3.2 3.6 0 2.2 1.3 3.6 3.2 3.6Zm0-1c-1.5 0-2.1-1.2-2.1-2.6 0-1.4.6-2.6 2-2.6 1.5 0 2.2 1.2 2.2 2.6 0 1.4-.7 2.7-2.1 2.7Zm8.6-6a2 2 0 0 0-.9-.2 2 2 0 0 0-1.8 1.3V5.3H105v7h1v-4c0-.9.7-2 1.9-2l.6.2.3-1Zm3.8 7c1.4 0 2.4-.7 2.7-1.7l-1-.3c-.3.7-.9 1-1.7 1-1.3 0-2-.7-2.2-2.2h5v-.5c0-2.6-1.5-3.5-3-3.5-1.8 0-3 1.5-3 3.7 0 2.1 1.1 3.5 3.2 3.5Zm-.1-6.2c1.1 0 1.9.9 1.9 2h-4c.2-1.3 1-2 2-2ZM82.2 80.1h-4.6l2.5-2.6c1-1 1.9-2.1 1.9-3.2 0-1.5-1.2-2.6-3-2.6-2 0-2.7 1.5-2.7 3h1c0-1 .5-2.1 1.7-2.1s1.9.8 1.9 1.7c0 .8-.6 1.5-1.7 2.6L76 80.3v.8h6.3v-1Zm7.7-4.2c0-2.7-1.1-4.2-3.1-4.2s-3.2 1.5-3.2 4.2v1c0 2.7 1.2 4.3 3.2 4.3s3-1.6 3-4.4V76ZM88.7 77c0 1.8-.6 3.2-2 3.2-1.3 0-2-1.4-2-3.2v-1.3c0-1.7.7-3 2-3 1.4 0 2 1.3 2 3V77Zm5.8-5.2h-1c0 .1-.6 1.4-2 1.4v1c1 0 1.8-.5 1.9-.8v7.7h1.1v-9.3Zm7.3 2.3h1c-.2-1.6-1.2-2.5-2.6-2.5-2.2 0-3.2 1.9-3.2 4.7v.3c0 3 1 4.6 3 4.6s3-1.4 3-3c0-1.5-1-3-2.8-3-.7 0-1.5.3-2 .9 0-2.8 1-3.4 2-3.4s1.4.8 1.6 1.4Zm-1.6 2.1c1.3 0 1.8 1 1.8 2 0 1.3-.8 2-1.8 2s-2-.6-2-2c0-1.2.9-2 2-2Z" />
+							</svg>
+
+						</div>
 					</div>
-				</a>
-
-				<div class='h6 black100 w5'>How we boosted our design process</div>
-				<div class='h8 black60 mt30 mb50'>In 2018, Bending Spoons switched from Sketch to Figma. We evaluated
-					the benefits and the reasons behind the change. Now Figma allows us to work in a faster and simpler
-					way with developers and also teams not directly involved in the specific design process [...]</div>
-
-				<a href="https://lucaburgio.com/insight/how-we-boosted-our-design-process" class='cta'>
-					<div class='h7 w5 trasl'>Read
-						<svg style="margin-left: 10px;" width="27" height="10" viewBox="0 0 27 10"
-							xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd"
-								d="M21.941 0.155L21.319 0.717C21.188 0.837 21.122 0.999 21.122 1.163C21.122 1.306 21.174 1.45 21.278 1.566C21.287 1.576 21.296 1.584 21.306 1.594L23.416 3.63H0.601C0.269 3.63 0 3.896 0 4.229V5.03C0 5.362 0.269 5.63 0.601 5.63H23.429L21.328 7.657C21.089 7.886 21.081 8.266 21.312 8.505C21.318 8.511 21.324 8.516 21.329 8.521L21.936 9.099C22.168 9.321 22.534 9.321 22.765 9.097L26.66 5.343C27.064 4.952 27.064 4.318 26.66 3.928L22.759 0.168C22.644 0.0560002 22.495 0 22.345 0C22.2 0 22.056 0.0510002 21.941 0.155Z" />
-						</svg>
+					<div class="shots">
+						<img src="images/shots/particular.jpeg" alt="">
+						<img src="images/shots/particular.jpeg" alt="">
 					</div>
-				</a>
-			</div>
-		</div>
-	</div>
-
-	<div class='hl1-section'
-		style='margin:0;background: linear-gradient(100.12deg, #F8E0FF 0%, #E9FBF9 32.81%, #EEF8ED 65.1%, #F4F5E0 100%);'>
-		<div class='main-con flex' style="padding: 100px 0 100px 0;">
-			<div class='half5'>
-				<div class='sub-head black100'>OPEN SOURCE</div>
-
-
-				<div class='mb50'>
-					<div class='h6 black100 w5' style='max-width: 280px;'><a style="text-decoration: none;color: black;"
-							href="http://iconoir.com">Iconoir</a></div>
-					<div class='h8 black60 mt30 mb50' style='opacity: 0.7;'>Iconoir is one of the biggest open source
-						SVG Icons libraries. No premium icons, no email sign-up, no newsletters. <br><br> Iconoir is
-						available on Figma, React and React Libraries, CSS and happily integrated in Framer.</div>
 				</div>
 
-				<a href="https://iconoir.com" class='cta'>
-					<div class='h7 w5 trasl'>Visit iconoir.com
 
-						<svg style="margin-left: 10px;" width="27" height="10" viewBox="0 0 27 10"
-							xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd"
-								d="M21.941 0.155L21.319 0.717C21.188 0.837 21.122 0.999 21.122 1.163C21.122 1.306 21.174 1.45 21.278 1.566C21.287 1.576 21.296 1.584 21.306 1.594L23.416 3.63H0.601C0.269 3.63 0 3.896 0 4.229V5.03C0 5.362 0.269 5.63 0.601 5.63H23.429L21.328 7.657C21.089 7.886 21.081 8.266 21.312 8.505C21.318 8.511 21.324 8.516 21.329 8.521L21.936 9.099C22.168 9.321 22.534 9.321 22.765 9.097L26.66 5.343C27.064 4.952 27.064 4.318 26.66 3.928L22.759 0.168C22.644 0.0560002 22.495 0 22.345 0C22.2 0 22.056 0.0510002 21.941 0.155Z" />
-						</svg>
+
+
+
+
+				<div class='hl1-section' style='margin-bottom:0px;'>
+					<div class='main-con'>
+						<div class='sub-head mb40'>Talks</div>
+						<div class="list">
+							<div class='list-item'>
+								<div class="first">
+									<div class='text-500'>Politecnico di Milano</div>
+									<div class='text-502'>2018</div>
+								</div>
+								<div class='text-501'>Presenting 'Process of designing Products'. The
+									complete
+									process behind the build of a product, in that case, an app. The entire flow,
+									starting from
+									the User Experience and the wireframing, The Design, The Prototyping, The
+									Finalization and
+									the last step, the Development.
+								</div>
+							</div>
+							<div class='list-item'>
+								<div class="first">
+									<div class='text-500'>Dribbble Event Milan 2019</div>
+									<div class='text-502'>2019</div>
+								</div>
+								<div class='text-501'>The Dribbble event at Bending Spoons HQ, in Milan.
+									Presenting
+									Figma, Prototyping tools and the process of designing products.
+								</div>
+							</div>
+							<div class='list-item'>
+								<div class="first">
+									<div class='text-500'>Polimi Interaction Design Class</div>
+									<div class='text-502'>2019</div>
+								</div>
+								<div class='text-501'>Presenting the use of prototypes to improve the Design
+									Process
+									and to avoid common UX mistakes, and common rules to consider during the study of an
+									efficient User Experience.
+								</div>
+							</div>
+						</div>
+
+						<div class='sub-head mt128 mb40'>Articles</div>
+						<div class="list">
+							<a href="/insight/the-making-of-particular.html" class='list-item'>
+								<div class="first">
+									<div class='text-500'>The Making Of Particular</div>
+									<div class='text-502'>2020</div>
+								</div>
+								<div class='text-501'>Most of you probably don't know about Particular and its
+									story
+									because I had never decided to publish it – until now – four years later. [...]
+								</div>
+								<img src="images/arrow.svg">
+							</a>
+							<a href="insight/how-we-boosted-our-design-process.html" class='list-item'>
+								<div class="first">
+									<div class='text-500'>How we boosted our design process</div>
+									<div class='text-502'>Mar 4, 2020</div>
+								</div>
+								<div class='text-501'>In 2018, Bending Spoons switched from Sketch to Figma. We
+									evaluated
+									the benefits and the reasons behind the change. Now Figma allows us to work in a faster
+									and
+									simpler way with developers and also teams not directly involved in the specific design
+									process
+									[...]
+								</div>
+								<img src="images/arrow.svg">
+							</a>
+							<a href="https://www.linkedin.com/pulse/designing-scale-where-creativity-meets-organized-chaos-luca-burgio%3FtrackingId=jYDdN7XfTpqu12iBRCBAtA%253D%253D/?trackingId=jYDdN7XfTpqu12iBRCBAtA%3D%3D" class='list-item'>
+								<div class="first">
+									<div class='text-500'>Designing at scale: Where creativity meets organized chaos</div>
+									<div class='text-502'>July 7, 2023</div>
+								</div>
+								<div class='text-501'>Here’s a question: How can a (growing) group of
+									individually talented designers, each with their own unique strengths and style
+									sensibilities, consistently strive to deliver exceptional on-brand design work for an
+									expanding range of diverse products?
+									[...]
+								</div>
+								<img src="images/arrow.svg">
+							</a>
+						</div>
+						<div class='sub-head mt128 mb40'>Playground—More smaller or unreleased projects</div>
+
+
+
+						<div class="list">
+							<a href="https://www.instagram.com/holoseries/?hl=en" class='list-item'>
+								<div class="list-image" style="background-image: url(images/holo-01.png);">
+								</div>
+								<div class="first">
+									<div class='text-500'>Holoseries</div>
+									<div class='text-502'>2021</div>
+								</div>
+								<div class='text-501'>A visual exploration and playground. The project, inspired by the great musician and friend <i>OVERWERK</i>, is a mix of 3D, 2D, and animations. Interesting fact: 3D elements are made playing with Figma.
+								</div>
+								<img src="images/arrow.svg">
+							</a>
+							<a class='list-item'>
+								<div class="first">
+									<div class='text-500'>Sandbox</div>
+									<div class='text-502'>2021</div>
+								</div>
+								<div class='text-501'>This 4-weekends project is what I would define my very peak with the Unity Engine exploration. With an undefined name, <i>Sandbox</i> is a mostly complete City/World Builder Engine in which you can add, edit, move, duplicate, resize (and more) blocks or prefabs to create your own city or world.
+									<br><br>
+									<b>▶ Watch the project recording (soon)</b>
+								</div>
+							</a>
+							<a class='list-item'>
+								<div class="first">
+									<div class='text-500'>Hidden</div>
+									<div class='text-502'>2020</div>
+								</div>
+								<div class='text-501'>Hidden is an adventure game concept set in an alternative universe, in 1975. The project lived for just a couple of weeks due to the lack of time and resources. <i>Hidden</i> is supposed to be a mix of exploration, puzzle, and action, with a strong focus on the narrative and the visual storytelling.
+									<br><br>
+									<b>▶ Watch the artworks (soon)</b>
+								</div>
+							</a>
+						</div>
+
 					</div>
-				</a>
-
-
-
+				</div>
 			</div>
-			<div class='half6 iconoir' style='text-align: center;margin: auto;'>
-				<a href="http://iconoir.com">
-					<svg width="302" height="70" viewBox="0 0 432 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M115.039 83.4354C115.039 84.9034 116.229 86.0934 117.697 86.0934H124.234C125.702 86.0934 126.892 84.9034 126.892 83.4354V34.8723C126.892 33.4043 125.702 32.2143 124.234 32.2143H117.697C116.229 32.2143 115.039 33.4044 115.039 34.8723V83.4354Z"
-							fill="black" />
-						<path
-							d="M186.877 74.5564C187.664 73.3399 187.166 71.7476 185.892 71.0575L180.315 68.0366C178.972 67.3093 177.309 67.876 176.448 69.1366C173.578 73.3338 168.906 76.1797 163.079 76.1797C153.489 76.1797 146.7 68.7443 146.7 59.1539C146.7 49.5634 153.489 42.1281 163.079 42.1281C168.906 42.1281 173.578 44.9739 176.448 49.1711C177.309 50.4317 178.972 50.9984 180.315 50.2711L185.892 47.2502C187.166 46.5601 187.664 44.9679 186.877 43.7513C181.915 36.0804 173.216 31.1367 163.079 31.1367C146.915 31.1367 134.631 43.2056 134.631 59.1539C134.631 75.1021 146.915 87.171 163.079 87.171C173.216 87.171 181.915 82.2273 186.877 74.5564Z"
-							fill="black" />
-						<path
-							d="M247.295 59.1539C247.295 43.5289 235.01 31.1367 219.062 31.1367C203.114 31.1367 190.829 43.5289 190.829 59.1539C190.829 74.7788 203.114 87.171 219.062 87.171C235.01 87.171 247.295 74.7788 247.295 59.1539ZM202.79 59.1539C202.79 49.5634 209.471 42.1281 219.062 42.1281C228.545 42.1281 235.226 49.5634 235.226 59.1539C235.226 68.7443 228.545 76.1797 219.062 76.1797C209.471 76.1797 202.79 68.7443 202.79 59.1539Z"
-							fill="black" />
-						<path
-							d="M254.906 83.4354C254.906 84.9034 256.096 86.0934 257.564 86.0934H264.101C265.569 86.0934 266.759 84.9034 266.759 83.4354V59.5849C266.759 48.0548 272.794 41.9125 280.66 41.9125C287.557 41.9125 291.867 47.0849 291.867 55.5978V83.4354C291.867 84.9034 293.057 86.0934 294.525 86.0934H301.062C302.53 86.0934 303.72 84.9034 303.72 83.4354V53.6582C303.72 39.9729 295.638 31.1367 283.138 31.1367C276.134 31.1367 269.992 34.154 266.759 39.5419V34.8723C266.759 33.4044 265.569 32.2143 264.101 32.2143H257.564C256.096 32.2143 254.906 33.4044 254.906 34.8723V83.4354Z"
-							fill="black" />
-						<path
-							d="M367.163 59.1539C367.163 43.5289 354.879 31.1367 338.93 31.1367C322.982 31.1367 310.698 43.5289 310.698 59.1539C310.698 74.7788 322.982 87.171 338.93 87.171C354.879 87.171 367.163 74.7788 367.163 59.1539ZM322.659 59.1539C322.659 49.5634 329.34 42.1281 338.93 42.1281C348.413 42.1281 355.094 49.5634 355.094 59.1539C355.094 68.7443 348.413 76.1797 338.93 76.1797C329.34 76.1797 322.659 68.7443 322.659 59.1539Z"
-							fill="black" />
-						<path
-							d="M374.774 83.4354C374.774 84.9034 375.964 86.0934 377.432 86.0934H383.97C385.438 86.0934 386.628 84.9034 386.628 83.4354V34.8723C386.628 33.4043 385.438 32.2143 383.97 32.2143H377.432C375.964 32.2143 374.774 33.4044 374.774 34.8723V83.4354Z"
-							fill="black" />
-						<path
-							d="M398.245 83.4354C398.245 84.9034 399.435 86.0934 400.903 86.0934H407.441C408.909 86.0934 410.099 84.9034 410.099 83.4354V59.8004C410.099 49.0246 416.241 43.3134 423.03 43.3134C423.881 43.3134 424.665 43.3638 425.428 43.4647C427.209 43.7001 428.956 42.453 428.956 40.6564V34.2856C428.956 33.0186 428.063 31.9105 426.802 31.7885C425.964 31.7074 425.143 31.6755 424.323 31.6755C418.181 31.6755 412.146 35.6626 410.099 41.8048V34.8723C410.099 33.4044 408.909 32.2143 407.441 32.2143H400.903C399.435 32.2143 398.245 33.4044 398.245 34.8723V83.4354Z"
-							fill="black" />
-						<circle cx="380.77" cy="18.3131" r="6.64509" fill="black" />
-						<circle cx="120.946" cy="18.3131" r="6.64509" fill="black" />
-						<path
-							d="M48.0372 37.5833V11.003C48.0372 6.96598 44.7645 3.69336 40.7276 3.69336V3.69336C36.6906 3.69336 33.418 6.96598 33.418 11.003V32.9318"
-							stroke="black" stroke-width="6.64509" stroke-linecap="round" />
-						<path
-							d="M58.0067 52.8674L67.8754 19.9717C69.0266 16.1345 66.8181 12.0969 62.9661 10.9963V10.9963C59.133 9.90116 55.141 12.1351 54.0694 15.9748L48.0391 37.5837"
-							stroke="black" stroke-width="6.64509" stroke-linecap="round" />
-						<path
-							d="M18.4167 36.5801L23.2044 47.2004C24.8588 50.87 23.2348 55.1866 19.572 56.8559C15.8879 58.5348 11.5409 56.8994 9.87705 53.2085L5.0893 42.5883C3.43497 38.9186 5.0589 34.6021 8.72178 32.9328C12.4058 31.2539 16.7528 32.8892 18.4167 36.5801Z"
-							stroke="black" stroke-width="6.64509" stroke-linecap="round" />
-						<path
-							d="M37.015 50.2358V50.2358C37.9436 47.6618 37.834 44.8274 36.7094 42.3328L31.8419 31.5356C30.2065 27.9078 25.9338 26.3004 22.3127 27.9506V27.9506C18.6245 29.6314 17.0559 34.0284 18.8474 37.664L19.4626 38.9125"
-							stroke="black" stroke-width="6.64509" stroke-linecap="round" />
-						<path
-							d="M46.7083 74.7952L48.94 70.3317C49.1621 69.8874 48.9283 69.3503 48.4518 69.2101L32.3462 64.4732C29.1179 63.5237 27.0289 60.4032 27.3811 57.0566V57.0566C27.7807 53.2611 31.1584 50.4926 34.9586 50.8461L56.6759 52.8664C56.6759 52.8664 73.9531 55.5244 67.9726 72.8016C61.992 90.0789 59.9984 96.0594 46.7083 96.0594C38.0696 96.0594 25.444 96.0594 25.444 96.0594H24.1149C13.472 96.0594 4.8442 87.4316 4.8442 76.7887V76.7887L4.17969 39.5762"
-							stroke="black" stroke-width="6.64509" stroke-linecap="round" />
-					</svg>
-				</a>
-
-			</div>
-		</div>
-	</div>
-
-
-	</div>
-
-
-	<script src="js/prognroll.min.js"></script>
-	<script type="text/javascript">
-		$(function () {
-
-			$("body").prognroll({
-
-				height: 4,
-				color: "#50E3C2"
-			});
-
-			$(".content").prognroll({
-				custom: true
-			});
-
-			$(window).scroll(function () {
-				if ($(window).scrollTop() > 250) {
-					$(".arrow-down").css("visibility", "hidden");
-				} else {
-					$(".arrow-down").css("visibility", "visible");
-				}
-			});
-
-		});
-	</script>
-
-
 	<script>
-
 		var speaking = 0;
 
 		function Speak() {
@@ -375,7 +497,60 @@
 			}
 		}
 	</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			// Define element IDs and their corresponding background colors
+			const elements = [
+			{id: 'id1', color: 'var(--bg)'},
+			{id: 'id2', color: 'var(--bg)'},
+			{id: 'id3', color: 'var(--bg)'},
+			{id: 'id4', color: 'var(--bg)'}
+			];
 
+			const elements2 = [
+			{id: 'id1', color: 'var(--bg)'},
+			{id: 'id2', color: 'rgb(232, 198, 198)'},
+			{id: 'id3', color: 'rgb(230, 255, 243)'},
+			{id: 'id4', color: 'var(--bg)'}
+			];
+			
+			// Function to get the current Y position of an element by ID
+			function getElementYPosition(id) {
+			const element = document.getElementById(id);
+			return element.offsetTop;
+			}
+			
+			window.onscroll = function() {
+			// Get the current scroll position
+			const scrollY = window.scrollY;
+			
+			for (let i = 0; i < elements.length; i++) {
+				// Dynamically get the Y position of the current and next element
+				const currentElementY = getElementYPosition(elements[i].id);
+				const nextElementY = i + 1 < elements.length ? getElementYPosition(elements[i + 1].id) : Infinity;
+				
+				// Check if the scroll position is within the current element's range
+				if (scrollY >= currentElementY && scrollY < nextElementY) {
+				document.body.style.backgroundColor = elements[i].color;
+				break; // Exit the loop once the correct color is applied
+				}
+			}
+			};
+		});
+	</script>
+
+<script>
+    var image = document.getElementsByClassName('parallax-image');
+    new simpleParallax(image, {
+        overflow: true,
+        orientation: 'up', // or 'down', depending on the direction you want
+        scale: 1.5 // Adjust scaling if needed, can enhance the parallax effect
+    });
+</script>
+
+
+<script src='js/cursor.js'></script>
+	
 </body>
 
 </html>
