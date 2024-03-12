@@ -74,7 +74,7 @@ var cursor = {
         var self = this;
         
         if (self.cursorEnlarged) {
-            self.$dot.style.transform = 'translate(-50%, -50%) scale(0.75)';
+            self.$dot.style.transform = 'translate(-50%, -50%) scale(6)';
         } else {
             self.$dot.style.transform = 'translate(-50%, -50%) scale(1)';
         }

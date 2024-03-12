@@ -34,10 +34,11 @@
        font-display: swap;
        font-style: normal;
 }
-html{
+*{
   cursor: none;
 }
 .cursor-dot {
+    z-index: 9999;
     pointer-events: none;
     position: absolute;
     top: 50%;
@@ -388,7 +389,6 @@ form button{
 }
 .avatar{
     width: 80px;
-    cursor: pointer;
     height: 80px;
     margin: 130px 0 0 0;
     background-image: url(../images/profile.png);
@@ -619,9 +619,6 @@ body{font-size: 16px;margin-left: auto;margin-right: auto;}
 }
 html {
   cursor: auto;
-}
-a {
-  cursor: pointer;
 }
 .text-800{font-size: 1em;}
 
