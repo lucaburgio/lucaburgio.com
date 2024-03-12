@@ -171,6 +171,9 @@ a.list-item:hover{
   width: 400px;
   color: var(--main);
   margin: auto;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
 }
 .list-item .text-501{
   width: inherit;
@@ -254,6 +257,7 @@ a.list-item:hover{
   font-weight: var(--medium);
   font-size: var(--xs);
   color: var(--secondary);
+  font-style: italic;
 }
 .text-503{
   font-weight: var(--regular);
