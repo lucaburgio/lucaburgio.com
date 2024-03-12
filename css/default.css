@@ -542,16 +542,12 @@ form button{
 
 @media only screen and (min-width: 1271px) and (max-width: 1490px) { 
 
-.guideline-in{width: 80%!important;}
-.guideline-out{width: 84%!important;}
 body{
   width: 90%;
 }
 }
 @media only screen and (min-width: 921px) and (max-width: 1270px) { 
 
-  .guideline-in{width: 80%!important;}
-  .guideline-out{width: 84%!important;}
   .role{display: block;}
   .role-title{
     width: 100%!important;
@@ -568,8 +564,6 @@ body{
 
 @media only screen and (min-width: 561px) and (max-width: 920px) { 
 
-.guideline-in{width: 80%;}
-.guideline-out{width: 84%;}
 body{
   width: 90%;
 }
@@ -580,17 +574,20 @@ body{
 .award.mxm1,.award.mxm2,.award.mxm3,.award.mxm4{margin-left: 0;margin-right: 26px;}
 
 .half30{width: 100%!important;}
+
+.list-item{
+  flex-direction: column;
+}
+.list-item .first{
+  width: 100%;
+}
+.list-item img{
+  display: none;
+}
 }
 
 /* Mobile */
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 560px),only screen and (max-width: 560px) { 
-
-.guideline-in{
-  width: 86%;
-}
-.guideline-out{
-  width: 90%;
-}
 
 body{
   font-size: 16px;
@@ -640,7 +637,9 @@ html {
   margin-top: 40px;
 }
 .half30{width: 100%!important;}
-
+.data{
+  text-align: center;
+}
 .contacts-cont{
   display: flex;
   flex-direction: column;
@@ -656,5 +655,14 @@ html {
 .a-cta{
   width: 100%;
   text-align: center;
+}
+.list-item{
+  flex-direction: column;
+}
+.list-item .first{
+  width: 100%;
+}
+.list-item img{
+  display: none;
 }
 }

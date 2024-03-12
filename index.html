@@ -475,11 +475,6 @@
 							</a>
 						</div>
 
-						<div class='text-100 mt256'>
-							<span>Drop me a line.</span><br>hi@lucaburgio.com
-						</div>
-
-
 					</div>
 				</div>
 			</div>
@@ -503,70 +498,45 @@
 		}
 	</script>
 	<script>
-		function updatePosition() {
-			const targetDiv = document.querySelector('.text-100');
-			const newDiv = document.querySelector('.title-guideline');
-			const rect = targetDiv.getBoundingClientRect();
+		document.addEventListener('DOMContentLoaded', function() {
+			// Define element IDs and their corresponding background colors
+			const elements = [
+			{id: 'id1', color: 'var(--bg)'},
+			{id: 'id2', color: 'var(--bg)'},
+			{id: 'id3', color: 'var(--bg)'},
+			{id: 'id4', color: 'var(--bg)'}
+			];
 
-			newDiv.style.top = `${rect.top + window.scrollY}px`; // Adjust for scroll
-			newDiv.style.height = `${rect.height}px`;
-		}
-
-		let resizeTimer;
-		window.addEventListener('resize', () => {
-			clearTimeout(resizeTimer);
-			resizeTimer = setTimeout(updatePosition, 1000); // Adjust the delay as needed
+			const elements2 = [
+			{id: 'id1', color: 'var(--bg)'},
+			{id: 'id2', color: 'rgb(232, 198, 198)'},
+			{id: 'id3', color: 'rgb(230, 255, 243)'},
+			{id: 'id4', color: 'var(--bg)'}
+			];
+			
+			// Function to get the current Y position of an element by ID
+			function getElementYPosition(id) {
+			const element = document.getElementById(id);
+			return element.offsetTop;
+			}
+			
+			window.onscroll = function() {
+			// Get the current scroll position
+			const scrollY = window.scrollY;
+			
+			for (let i = 0; i < elements.length; i++) {
+				// Dynamically get the Y position of the current and next element
+				const currentElementY = getElementYPosition(elements[i].id);
+				const nextElementY = i + 1 < elements.length ? getElementYPosition(elements[i + 1].id) : Infinity;
+				
+				// Check if the scroll position is within the current element's range
+				if (scrollY >= currentElementY && scrollY < nextElementY) {
+				document.body.style.backgroundColor = elements[i].color;
+				break; // Exit the loop once the correct color is applied
+				}
+			}
+			};
 		});
-
-		window.addEventListener('load', () => {
-			clearTimeout(resizeTimer);
-			resizeTimer = setTimeout(updatePosition, 1000); // Adjust the delay as needed
-		});
-
-		updatePosition(); // Initial position setting
-
-	</script>
-
-<script>
-	document.addEventListener('DOMContentLoaded', function() {
-	// Define element IDs and their corresponding background colors
-	const elements = [
-	  {id: 'id1', color: 'var(--bg)'},
-	  {id: 'id2', color: 'var(--bg)'},
-	  {id: 'id3', color: 'var(--bg)'},
-	  {id: 'id4', color: 'var(--bg)'}
-	];
-
-	const elements2 = [
-	  {id: 'id1', color: 'var(--bg)'},
-	  {id: 'id2', color: 'rgb(232, 198, 198)'},
-	  {id: 'id3', color: 'rgb(230, 255, 243)'},
-	  {id: 'id4', color: 'var(--bg)'}
-	];
-	
-	// Function to get the current Y position of an element by ID
-	function getElementYPosition(id) {
-	  const element = document.getElementById(id);
-	  return element.offsetTop;
-	}
-	
-	window.onscroll = function() {
-	  // Get the current scroll position
-	  const scrollY = window.scrollY;
-	
-	  for (let i = 0; i < elements.length; i++) {
-		// Dynamically get the Y position of the current and next element
-		const currentElementY = getElementYPosition(elements[i].id);
-		const nextElementY = i + 1 < elements.length ? getElementYPosition(elements[i + 1].id) : Infinity;
-		
-		// Check if the scroll position is within the current element's range
-		if (scrollY >= currentElementY && scrollY < nextElementY) {
-		  document.body.style.backgroundColor = elements[i].color;
-		  break; // Exit the loop once the correct color is applied
-		}
-	  }
-	};
-});
 	</script>
 
 <script>
