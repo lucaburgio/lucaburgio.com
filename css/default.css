@@ -29,17 +29,19 @@
   --sm: 20px;
   --md: 24px;
 
-  --thin:300;
-  --regular: 400;
-  --medium: 500;
-  --bold: 600;
+  --familyRegular: 'Satoshi-Regular';
+  --familyLight: 'Satoshi-Light';
+  --familyLightItalic: 'Satoshi-LightItalic';
+  --familyItalic: 'Satoshi-Italic';
+  --familyBold: 'Satoshi-Bold';
+  --familyMedium: 'Satoshi-Medium';
 }
 html{
 	-ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 body{
-  font-family: 'Satoshi-Regular';
+  font-family: var(--familyRegular);
   text-rendering: geometricPrecision;
   font-weight: 500;
   margin: auto;
@@ -156,7 +158,7 @@ a.list-item:hover{
 .text-100{
   color: var(--main);
   font-size: 4.4em;
-  font-family: 'Satoshi-Bold';
+  font-family: var(--familyBold);
   line-height: 1;
   letter-spacing: -4px;
   margin-bottom: 80px;
@@ -164,8 +166,7 @@ a.list-item:hover{
   margin-top: 20px;
 }
 .text-100 span{
-  font-weight: var(--thin);
-  font-family: 'Satoshi-LightItalic';
+  font-family: var(--familyLightItalic);
   color: var(--main);
 }
 .text-100 a, .text-500 a{
@@ -185,7 +186,7 @@ a.list-item:hover{
 .text-200{
   color: var(--main);
   font-size: 3.6em;
-  font-family: 'Satoshi-Bold';
+  font-family:  var(--familyBold);
   line-height: 0.8;
   letter-spacing: -2px;
   margin-bottom: 100px;
@@ -198,28 +199,28 @@ a.list-item:hover{
   line-height: 1.1;
 }
 .text-500{
-  font-weight: var(--bold);
+  font-family: var(--familyBold);
   font-size: var(--sm);
 }
 .text-501{
-  font-weight: var(--regular);
+  font-family: var(--familyRegular);
   font-size: var(--sm);
   color: var(--secondary);
 }
 .text-502{
-  font-family: 'Satoshi-Medium';
+  font-family: var(--familyMedium);
   font-size: var(--xs);
   color: var(--secondary);
   font-style: italic;
 }
 .text-504{
-  font-weight: var(--regular);
+  font-family: var(--familyRegular);
   font-size: var(--xxs);
   color: var(--secondary);
 }
 .text-700{
   font-size: var(--sm);
-  font-family:"Satoshi-Medium";
+  font-family: var(--familyMedium);
   color: var(--main);
 }
 .text-800 {
@@ -233,7 +234,7 @@ a.list-item:hover{
 .data .text-500.value{
   color: var(--secondary);
   margin-bottom: 48px;
-  font-weight: var(--regular);
+  font-family: var(--familyRegular);
 }
 
 .half30{width: 30%;}
@@ -253,7 +254,7 @@ a.list-item:hover{
 .contacts {
   font-size: var(--sm);
   display: inline-block;
-  font-family: 'Satoshi-Medium';
+  font-family: var(--familyMedium);
   color: var(--main);
   line-height: 3;
   letter-spacing: -1px;
@@ -271,7 +272,7 @@ a.list-item:hover{
   margin: 30px 0 60px 0;
 }
 form button{
-  font-family: 'Satoshi-Medium';
+  font-family: var(--familyMedium);
 }
 .contacts.button{
   text-decoration: none;
@@ -286,7 +287,7 @@ form button{
 
 .sub-head{
   font-size: var(--xxs);
-  font-family: 'Satoshi-Medium';
+  font-family: var(--familyMedium);
   font-style: italic;
   color: var(--main);
   padding: 8px 0;
@@ -295,7 +296,7 @@ form button{
 }
 .cta{
   text-decoration: none;
-  font-family: 'Satoshi-Medium';
+  font-family: var(--familyMedium);
   color: var(--main);
   padding: 14px 24px;
   border-radius: 14px;
