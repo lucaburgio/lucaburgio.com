@@ -321,7 +321,7 @@ form button{
 
 .sub-head{
   font-size: var(--xxs);
-  font-weight: 500;
+  font-family: 'Satoshi-Medium';
   font-style: italic;
   color: var(--main);
   padding: 8px 0;
