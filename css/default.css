@@ -185,7 +185,7 @@ a.list-item:hover{
 .text-200{
   color: var(--main);
   font-size: 3.6em;
-  font-weight: 700;
+  font-family: 'Satoshi-Bold';
   line-height: 0.8;
   letter-spacing: -2px;
   margin-bottom: 100px;
