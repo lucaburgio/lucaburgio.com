@@ -31,8 +31,6 @@
 
   --familyRegular: 'Satoshi-Regular';
   --familyLight: 'Satoshi-Light';
-  --familyLightItalic: 'Satoshi-LightItalic';
-  --familyItalic: 'Satoshi-Italic';
   --familyBold: 'Satoshi-Bold';
   --familyMedium: 'Satoshi-Medium';
 }
@@ -43,7 +41,6 @@ html{
 body{
   font-family: var(--familyRegular);
   text-rendering: geometricPrecision;
-  font-weight: 500;
   margin: auto;
   width: 98%;
   letter-spacing: 0;
@@ -166,7 +163,8 @@ a.list-item:hover{
   margin-top: 20px;
 }
 .text-100 span{
-  font-family: var(--familyLightItalic);
+  font-family: var(--familyLight);
+  font-style: italic;
   color: var(--main);
 }
 .text-100 a, .text-500 a{
@@ -194,7 +192,7 @@ a.list-item:hover{
 }
 .text-300{
   color: var(--main);
-  font-weight: 700;
+  font-family: var(--familyBold);
   font-size: 2em;
   line-height: 1.1;
 }
@@ -401,8 +399,6 @@ form button{
   background-color: #ffcf2a;
   color: #000;
 }
-
-.text-700 a{font-weight: 600;}
 .mt30{margin-top: 30px;}
 .mt50{margin-top: 50px;}
 .mt60{margin-top: 60px;}
