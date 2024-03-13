@@ -149,6 +149,27 @@ a.list-item:hover{
   background-position: center;
   transition-duration: 250ms;
 }
+.article{
+    line-height: 1.7;
+    width: 98%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 200px 0;
+}
+.article img{
+  width: 100%;
+}
+blockquote{
+  font-family: var(--familyRegular);
+  font-style: italic;
+  font-size: var(--md);
+  color: var(--secondary);
+  background: #e5e5e5;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+
+}
 
 /* Typography */
 
@@ -181,7 +202,7 @@ a.list-item:hover{
 	animation: gradient 4s ease infinite;
 	height: 100vh;
 }
-.text-200{
+.text-200, h1{
   color: var(--main);
   font-size: 3.6em;
   font-family:  var(--familyBold);
@@ -196,11 +217,20 @@ a.list-item:hover{
   font-size: 2em;
   line-height: 1.1;
 }
-.text-500{
+h2{
+  font-family: var(--familyBold);
+  color: var(--main);
+  font-size: var(--md);
+}
+.text-500, p a{
   font-family: var(--familyBold);
   font-size: var(--sm);
+  color: var(--main);
 }
-.text-501{
+p a{
+  text-decoration: underline;
+}
+.text-501, p, ul{
   font-family: var(--familyRegular);
   font-size: var(--sm);
   color: var(--secondary);
@@ -211,7 +241,7 @@ a.list-item:hover{
   color: var(--secondary);
   font-style: italic;
 }
-.text-504{
+.text-504, txt{
   font-family: var(--familyRegular);
   font-size: var(--xxs);
   color: var(--secondary);
@@ -225,6 +255,13 @@ a.list-item:hover{
   font-size: 0.7em;
   line-height: 2;
 }
+code{
+  background-color: #f3f3f3;
+  padding: 20px;
+  line-height: 70px;
+  font-size: var(--xs);
+}
+/* End Typography */
 
 .data{
   text-align: right;
