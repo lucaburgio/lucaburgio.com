@@ -218,7 +218,7 @@ a.list-item:hover{
   color: var(--secondary);
 }
 .text-502{
-  font-weight: var(--medium);
+  font-family: 'Satoshi-Medium';
   font-size: var(--xs);
   color: var(--secondary);
   font-style: italic;
@@ -288,7 +288,7 @@ a.list-item:hover{
 .contacts {
   font-size: var(--sm);
   display: inline-block;
-  font-weight: 500;
+  font-family: 'Satoshi-Medium';
   color: var(--main);
   line-height: 3;
   letter-spacing: -1px;
