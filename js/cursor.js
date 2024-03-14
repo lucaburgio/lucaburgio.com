@@ -13,7 +13,6 @@ var cursor = {
         this.dotSize = this.$dot.offsetWidth;
         
         this.setupEventListeners();
-        this.animateDotOutline();
     },
 
     setupEventListeners: function() {

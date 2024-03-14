@@ -9,7 +9,7 @@
 	<meta name="description" content="Head of Design at ∞ Bending Spoons. Previously Android Lead Designer at Musixmatch. Creator of Particular and Iconoir." />
 	<meta name="author" content="Luca Burgio" />
 	<link rel="shortcut icon" href="images/favicon.png">
-	<link rel="stylesheet" type="text/css" href="css/default.css?v=5.14" />
+	<link rel="stylesheet" type="text/css" href="css/default.css?v=5.15" />
 	<link rel="stylesheet" type="text/css" href="css/satoshi.css" />
 	<script src='js/jquery202.min.js'></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -78,7 +78,7 @@
 				</script>
 				<div class='avatar tooltip' onclick='Speak()'><span class="tooltiptext" id="saying">Hey! Click
 						me.</span></div>
-				<div class='text-700 mt50'>Hey, I’m Luca.</div><div id="id1"></div>
+				<div class='text-700 mt48'>Hey, I’m Luca.</div><div id="id1"></div>
 				<h1>
 					<span>Currently</span> Head of Design at Bending Spoons. <span>Previously</span> Android Lead Designer at Musixmatch.<br>
 				</h1>
@@ -148,7 +148,7 @@
 								Framer.
 							</div>
 							<a href="https://iconoir.com" class="a-cta">
-								<div class='cta mt50'>
+								<div class='cta mt48'>
 									Take a look
 									<svg width="27" height="12" viewBox="0 0 27 10" fill="var(--main)"
 										xmlns="http://www.w3.org/2000/svg">
@@ -182,7 +182,7 @@
 						</div>
 						</div>
 					<div class='main-con'>
-						<canvas style='margin-top: 60px;' id="iconoirChart" width="400" height="100"></canvas>
+						<canvas id="iconoirChart" width="400px" height="100px"></canvas>
 						<script>
 							// Step 3: JavaScript to define and render the chart
 							var ctx = document.getElementById('iconoirChart').getContext('2d');
@@ -203,6 +203,8 @@
 									}]
 								},
 								options: {
+									responsive: true,
+        							maintainAspectRatio: true,
 									plugins: {
 										annotation: {
 											annotations: {
@@ -308,7 +310,7 @@
 							</div>
 							<div id="id4"></div>
 							<a href="/insight/the-making-of-particular.html" class="a-cta">
-								<div class='cta mt50'>
+								<div class='cta mt48'>
 									Read
 									<svg width="27" height="12" viewBox="0 0 27 10" fill="var(--main)"
 										xmlns="http://www.w3.org/2000/svg">
